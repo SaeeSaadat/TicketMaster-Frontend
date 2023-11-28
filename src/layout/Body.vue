@@ -9,10 +9,15 @@
                 <sidebar-link to="/typography" icon="tim-icons icon-align-center" name="Typography"/>
             </template>
         </side-bar>
-    <div class="main-panel">
-      <top-navbar></top-navbar>
-      <content-footer></content-footer>
-    </div>
+        <div class="main-panel">
+            <Header />
+            <div class="content">
+                <fade-transition>
+                    <router-view></router-view>
+                </fade-transition>
+            </div>
+            <Footer />
+        </div>
   </div>
 </template>
 
@@ -21,12 +26,13 @@
 </style>
 
 <script>
-import TopNavbar from "./TopNavbar.vue";
-import ContentFooter from "./ContentFooter.vue";
+import Header from "./Header.vue";
+import Footer from "./Footer.vue";
+
 export default {
     components: {
-        TopNavbar,
-        ContentFooter,
+        Header,
+        Footer,
     }
 };
 </script>

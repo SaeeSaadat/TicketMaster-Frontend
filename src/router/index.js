@@ -1,5 +1,3 @@
-import DashboardLayout from "@/layout/DashboardLayout.vue";
-import NotFound from "@/pages/NotFoundPage.vue";
 import VueRouter from "vue-router";
 
 const Dashboard = () => import("@/pages/Dashboard.vue");
@@ -7,6 +5,9 @@ const Profile = () => import("@/pages/Profile.vue");
 const Notifications = () => import("@/pages/Notifications.vue");
 const Icons = () => import("@/pages/Icons.vue");
 const Typography = () => import("@/pages/Typography.vue");
+const NotFound = () => import("@/pages/NotFoundPage.vue");
+
+const DashboardLayout = () => import("@/layout/Body.vue");
 
 const routes = [
 	{
@@ -48,13 +49,12 @@ const router = new VueRouter({
 	routes,
 	linkExactActiveClass: "active",
 	scrollBehavior: (to) => {
-	  if (to.hash) {
-		return {selector: to.hash}
-	  } else {
-		return { x: 0, y: 0 }
-	  }
-	}
-  });
-  
-  export default router;
-  
+		if (to.hash) {
+			return { selector: to.hash };
+		} else {
+			return { x: 0, y: 0 };
+		}
+	},
+});
+
+export default router;
