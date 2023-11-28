@@ -1,6 +1,6 @@
 import VueRouter from "vue-router";
 
-const Dashboard = () => import("@/pages/Dashboard.vue");
+const Dashboard = () => import("@/pages/Dashboard/Index.vue");
 const Profile = () => import("@/pages/Profile.vue");
 const Notifications = () => import("@/pages/Notifications.vue");
 const Icons = () => import("@/pages/Icons.vue");
