@@ -1,5 +1,3 @@
-import BaseInput from "./Inputs/BaseInput.vue";
-
 import BaseCheckbox from "./BaseCheckbox.vue";
 import BaseRadio from "./BaseRadio.vue";
 import BaseDropdown from "./BaseDropdown.vue";
@@ -16,7 +14,6 @@ import StatsCard from "./Cards/StatsCard.vue";
 import SidebarPlugin from "./SidebarPlugin/index.js";
 
 export {
-  BaseInput,
   Card,
   Modal,
   CloseButton,

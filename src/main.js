@@ -7,7 +7,6 @@ import router from "./router/routes";
 import SideBar from "@/components/SidebarPlugin";
 import Notify from "@/components/NotificationPlugin";
 import {
-	BaseInput,
 	Card,
 	BaseDropdown,
 	BaseButton,
@@ -17,7 +16,6 @@ import {
 import "@/assets/sass/black-dashboard.scss";
 import "@/assets/css/nucleo-icons.css";
 
-Vue.component(BaseInput.name, BaseInput);
 Vue.component(Card.name, Card);
 Vue.component(BaseDropdown.name, BaseDropdown);
 Vue.component(BaseButton.name, BaseButton);

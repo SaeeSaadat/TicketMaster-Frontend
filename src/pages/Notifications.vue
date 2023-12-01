@@ -86,7 +86,7 @@
   </div>
 </template>
 <script>
-  import NotificationTemplate from './Notifications/LoginError.vue';
+  import NotificationTemplate from '../components/Notifications/LoginError.vue';
   import { BaseAlert } from '@/components';
 
   export default {
