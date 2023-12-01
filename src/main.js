@@ -23,11 +23,8 @@ Vue.component(BaseDropdown.name, BaseDropdown);
 Vue.component(BaseButton.name, BaseButton);
 Vue.component(BaseCheckbox.name, BaseCheckbox);
 
-Vue.use(GlobalComponents);
 Vue.use(SideBar);
 Vue.use(Notify);
-
-Vue.use(BlackDashboard);
 Vue.use(VueRouter);
 
 new Vue({
