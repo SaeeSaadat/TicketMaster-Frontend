@@ -6,7 +6,6 @@ const Notifications = () => import("@/pages/Notifications.vue");
 const Icons = () => import("@/pages/Icons.vue");
 const Typography = () => import("@/pages/Typography.vue");
 const NotFound = () => import("@/pages/NotFoundPage.vue");
-
 const DashboardLayout = () => import("@/layout/Body.vue");
 
 const routes = [
@@ -46,6 +45,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+	mode:'history',
 	routes,
 	linkExactActiveClass: "active",
 	scrollBehavior: (to) => {
