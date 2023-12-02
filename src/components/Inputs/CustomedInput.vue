@@ -1,9 +1,7 @@
 <template>
     <div :class="customedDivClass">
-        <label :class="customedLabelClass">
-              {{ label }}
-            </label>
-        <input :disabled="disabled" @input="hanleInputChange" :class="customedInputClass" :value="inputValue" :placeholder="placeholder" :type="type" />
+        <label :class="customedLabelClass">{{ label }}</label>
+        <input v-model="text" :disabled="disabled" @input="hanleInputChange" :class="customedInputClass" :value="inputValue" :placeholder="placeholder" :type="type" />
     </div>
 </template>
 

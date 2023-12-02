@@ -9,7 +9,6 @@ import Notify from "@/components/NotificationPlugin";
 import {
 	Card,
 	BaseDropdown,
-	BaseButton,
 	BaseCheckbox,
 } from "@/components/index";
 
@@ -18,7 +17,6 @@ import "@/assets/css/nucleo-icons.css";
 
 Vue.component(Card.name, Card);
 Vue.component(BaseDropdown.name, BaseDropdown);
-Vue.component(BaseButton.name, BaseButton);
 Vue.component(BaseCheckbox.name, BaseCheckbox);
 
 Vue.use(SideBar);

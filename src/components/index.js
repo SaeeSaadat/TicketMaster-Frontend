@@ -2,7 +2,6 @@ import BaseCheckbox from "./BaseCheckbox.vue";
 import BaseRadio from "./BaseRadio.vue";
 import BaseDropdown from "./BaseDropdown.vue";
 import BaseTable from "./BaseTable.vue";
-import BaseButton from "./BaseButton.vue";
 import BaseAlert from "./BaseAlert.vue";
 import BaseNav from "./BaseNav.vue";
 import Modal from "./Modal.vue";
@@ -22,7 +21,6 @@ export {
   BaseCheckbox,
   BaseRadio,
   BaseDropdown,
-  BaseButton,
   BaseAlert,
   SidebarPlugin,
   BaseNav

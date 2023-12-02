@@ -25,7 +25,7 @@ export default {
     },
     methods: {
         hanleInputChange() {
-            this.$emit("input", this.text);
+            this.$emit("textarea", this.text);
         },
     },
 };
