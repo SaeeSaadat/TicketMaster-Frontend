@@ -1,18 +1,34 @@
 <template>
-    <div class="form-group">
-        <label class="control-label">
-            {{ label }}
-        </label>
-        <input class="form-control"/>
+    <div :class="customedDivClass">
+        <label :class="customedLabelClass">
+              {{ label }}
+            </label>
+        <input :disabled="disabled" @input="hanleInputChange" :class="customedInputClass" :value="inputValue" :placeholder="placeholder" :type="type" />
     </div>
 </template>
 
 <script>
 export default {
     name: "customed-input",
-    props: [],
+    props: [
+        "customedDivClass",
+        "customedInputClass",
+        "placeholder",
+        "label",
+        "inputValue",
+        "disabled",
+        "type",
+        "customedLabelClass"
+    ],
     data() {
-        return {}
-    }
-}
+        return {
+            text: this.inputValue
+        };
+    },
+    methods: {
+        hanleInputChange() {
+            this.$emit('input', this.text)
+        }
+    },
+};
 </script>
