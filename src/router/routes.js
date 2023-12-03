@@ -1,6 +1,6 @@
 import VueRouter from "vue-router";
 
-const Dashboard = () => import("@/pages/Dashboard.vue");
+const DashboardBody = () => import("@/pages/DashboardBody.vue");
 const Profile = () => import("@/pages/Profile.vue");
 const Icons = () => import("@/pages/Icons.vue");
 const NotFound = () => import("@/pages/NotFoundPage.vue");
@@ -9,17 +9,14 @@ const Signup = () => import("@/pages/Auth/Signup.vue");
 const DashboardLayout = () => import("@/components/FullPage.vue");
 
 const routes = [
-	{ path: "/", redirect: "/login" },
-	{ path: "/login", component: Login },
-	{ path: "/signup", component: Signup },
 	{
 		path: "/dashboard",
 		component: DashboardLayout,
 		children: [
 			{
-				path: "dashboard",
-				name: "dashboard",
-				component: Dashboard,
+				path: "main",
+				name: "Dashboard",
+				component: DashboardBody,
 			},
 			{
 				path: "profile",
@@ -33,6 +30,9 @@ const routes = [
 			},
 		],
 	},
+	{ path: "/", redirect: "/login" },
+	{ path: "/login", component: Login },
+	{ path: "/signup", component: Signup },
 	{ path: "*", component: NotFound },
 ];
 
