@@ -1,7 +1,7 @@
 <template>
     <div :class="customedDivClass">
         <label :class="customedLabelClass">{{ label }}</label>
-        <input v-model="text" :disabled="disabled" @input="hanleInputChange" :class="customedInputClass" :value="inputValue" :placeholder="placeholder" :type="type" />
+        <input v-model="text" :disabled="disabled" @input="hanleInputChange" class="form-control" :value="inputValue" :placeholder="placeholder" :type="type" />
     </div>
 </template>
 
@@ -10,7 +10,6 @@ export default {
     name: "customed-input",
     props: [
         "customedDivClass",
-        "customedInputClass",
         "placeholder",
         "label",
         "inputValue",

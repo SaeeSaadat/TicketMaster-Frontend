@@ -19,17 +19,6 @@
         <p class="card-description">
             {{user.description}}
         </p>
-        <div slot="footer" class="button-container">
-            <base-button icon round class="btn-facebook">
-                <i class="fa fa-facebook"></i>
-            </base-button>
-            <base-button icon round class="btn-twitter">
-                <i class="fa fa-twitter"></i>
-            </base-button>
-            <base-button icon round class="btn-google">
-                <i class="fa fa-google-plus"></i>
-            </base-button>
-        </div>
     </card>
 </template>
 

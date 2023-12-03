@@ -2,7 +2,6 @@ import VueRouter from "vue-router";
 
 const Dashboard = () => import("@/pages/Dashboard/Index.vue");
 const Profile = () => import("@/pages/Profile.vue");
-const Notifications = () => import("@/pages/Notifications.vue");
 const Icons = () => import("@/pages/Icons.vue");
 const Typography = () => import("@/pages/Typography.vue");
 const NotFound = () => import("@/pages/NotFoundPage.vue");
@@ -23,11 +22,6 @@ const routes = [
 				path: "profile",
 				name: "profile",
 				component: Profile,
-			},
-			{
-				path: "notifications",
-				name: "notifications",
-				component: Notifications,
 			},
 			{
 				path: "icons",
