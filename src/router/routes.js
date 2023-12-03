@@ -3,8 +3,9 @@ import VueRouter from "vue-router";
 const Dashboard = () => import("@/pages/Dashboard.vue");
 const Profile = () => import("@/pages/Profile.vue");
 const Icons = () => import("@/pages/Icons.vue");
-const Typography = () => import("@/pages/Typography.vue");
 const NotFound = () => import("@/pages/NotFoundPage.vue");
+const Login = () => import("@/pages/auth/Login.vue");
+const Signup = () => import("@/pages/auth/Signup.vue");
 const DashboardLayout = () => import("@/components/FullPage.vue");
 
 const routes = [
@@ -28,18 +29,15 @@ const routes = [
 				name: "icons",
 				component: Icons,
 			},
-			{
-				path: "typography",
-				name: "typography",
-				component: Typography,
-			},
 		],
 	},
+	{ path: "/login", component: Login },
+	{ path: "/signup", component: Signup },
 	{ path: "*", component: NotFound },
 ];
 
 const router = new VueRouter({
-	mode:'history',
+	mode: "history",
 	routes,
 	linkExactActiveClass: "active",
 	scrollBehavior: (to) => {

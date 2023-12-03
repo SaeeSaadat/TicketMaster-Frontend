@@ -1,17 +1,15 @@
 <template>
     <div>
-        <Sidebar class="sidebar"/>
-    
+        <Sidebar class="sidebar" />
         <div class="main-panel">
             <Header />
-    
             <div class="content">
-                <router-view />
+                <Transition>
+                    <router-view />
+                </Transition>
             </div>
-    
             <Footer />
         </div>
-        
     </div>
 </template>
 
