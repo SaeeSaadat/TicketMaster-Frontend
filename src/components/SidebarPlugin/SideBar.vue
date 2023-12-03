@@ -1,11 +1,6 @@
 <template>
   <div class="sidebar"
        :data="backgroundColor">
-    <!--
-            Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black | darkblue"
-            Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
-        -->
-    <!-- -->
     <div class="sidebar-wrapper" id="style-3">
       <div class="logo">
         <a href="http://www.creative-tim.com"
@@ -25,7 +20,6 @@
 
       </slot>
       <ul class="nav">
-        <!--By default vue-router adds an active class to each route link. This way the links are colored when clicked-->
         <slot name="links">
           <sidebar-link v-for="(link,index) in sidebarLinks"
                         :key="index"
@@ -85,10 +79,6 @@
       SidebarLink
     },
     computed: {
-      /**
-       * Styles to animate the arrow near the current active sidebar link
-       * @returns {{transform: string}}
-       */
       arrowMovePx() {
         return this.linkHeight * this.activeLinkIndex;
       },

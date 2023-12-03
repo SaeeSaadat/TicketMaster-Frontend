@@ -9,7 +9,6 @@ import {
 	Card,
 } from "@/components/index";
 
-import "@/assets/sass/black-dashboard.scss";
 import "@/assets/css/icons.css";
 
 Vue.component(Card.name, Card);
