@@ -1,11 +1,11 @@
 import VueRouter from "vue-router";
 
-const Dashboard = () => import("@/pages/Dashboard/Index.vue");
+const Dashboard = () => import("@/pages/Dashboard.vue");
 const Profile = () => import("@/pages/Profile.vue");
 const Icons = () => import("@/pages/Icons.vue");
 const Typography = () => import("@/pages/Typography.vue");
 const NotFound = () => import("@/pages/NotFoundPage.vue");
-const DashboardLayout = () => import("@/layout/Body.vue");
+const DashboardLayout = () => import("@/components/FullPage.vue");
 
 const routes = [
 	{
