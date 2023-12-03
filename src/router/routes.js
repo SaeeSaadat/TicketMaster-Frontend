@@ -4,15 +4,17 @@ const Dashboard = () => import("@/pages/Dashboard.vue");
 const Profile = () => import("@/pages/Profile.vue");
 const Icons = () => import("@/pages/Icons.vue");
 const NotFound = () => import("@/pages/NotFoundPage.vue");
-const Login = () => import("@/pages/auth/Login.vue");
-const Signup = () => import("@/pages/auth/Signup.vue");
+const Login = () => import("@/pages/Auth/Login.vue");
+const Signup = () => import("@/pages/Auth/Signup.vue");
 const DashboardLayout = () => import("@/components/FullPage.vue");
 
 const routes = [
+	{ path: "/", redirect: "/login" },
+	{ path: "/login", component: Login },
+	{ path: "/signup", component: Signup },
 	{
-		path: "/",
+		path: "/dashboard",
 		component: DashboardLayout,
-		redirect: "/dashboard",
 		children: [
 			{
 				path: "dashboard",
@@ -31,8 +33,6 @@ const routes = [
 			},
 		],
 	},
-	{ path: "/login", component: Login },
-	{ path: "/signup", component: Signup },
 	{ path: "*", component: NotFound },
 ];
 

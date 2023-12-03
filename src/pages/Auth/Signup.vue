@@ -6,10 +6,10 @@
                 <customed-input customedLabelClass="text-white" customedDivClass="col-12" label="Username :" placeholder="Please Choose a Username ..." v-model="username" />
             </div>
             <div class="row mb-4">
-                <customed-input type="password" customedLabelClass="text-white" customedDivClass="col-12" label="Password :" placeholder="Please Choose a Password ..." v-model="password" />
+                <customed-input customedLabelClass="text-white" customedDivClass="col-12" label="Password :" placeholder="Please Choose a Password ..." v-model="password" type="password" />
             </div>
             <div class="row mb-5">
-                <customed-input type="password" customedLabelClass="text-white" customedDivClass="col-12" label="reEnter Password :" placeholder="Please reEnter Your Password ..." v-model="rePassword" />
+                <customed-input customedLabelClass="text-white" customedDivClass="col-12" label="reEnter Password :" placeholder="Please reEnter Your Password ..." v-model="rePassword" type="password" />
             </div>
             <button class="btn btn-primary mr-5">SignUp</button>
             <a href="/login">Already have an Account!</a>
