@@ -2,24 +2,24 @@
     <card>
         <h5 class="title">Edit Profile</h5>
         <div class="row mb-3">
-            <customed-input customedLabelClass="" customedDivClass="col-md-5 pr-md-1" label="Company (disabled)" placeholder="Company" v-model="form.company" :disabled="true" />
-            <customed-input customedLabelClass="" customedDivClass="col-md-3 px-md-1" label="userName" placeholder="Username" v-model="form.username" />
-            <customed-input customedLabelClass="" customedDivClass="col-md-4 pl-md-1" label="Email" placeholder="mike@email.com" v-model="form.email" />
+            <customed-input :inputValue="model.company" customedLabelClass="" customedDivClass="col-md-5 pr-md-1" label="Company (disabled)" placeholder="Company" v-model="form.company" :disabled="true" />
+            <customed-input :inputValue="model.username" customedLabelClass="" customedDivClass="col-md-3 px-md-1" label="userName" placeholder="Username" v-model="form.username" />
+            <customed-input :inputValue="model.email" customedLabelClass="" customedDivClass="col-md-4 pl-md-1" label="Email" placeholder="mike@email.com" v-model="form.email" />
         </div>
         <div class="row mb-3">
-            <customed-input customedLabelClass="" customedDivClass="col-md-6 pr-md-1" label="firstName" placeholder="firstName" v-model="form.firstName" />
-            <customed-input customedLabelClass="" customedDivClass="col-md-6 pl-md-1" label="lastName" placeholder="lastName" v-model="form.lastName" />
+            <customed-input :inputValue="model.firstName" customedLabelClass="" customedDivClass="col-md-6 pr-md-1" label="firstName" placeholder="firstName" v-model="form.firstName" />
+            <customed-input :inputValue="model.lastName" customedLabelClass="" customedDivClass="col-md-6 pl-md-1" label="lastName" placeholder="lastName" v-model="form.lastName" />
         </div>
         <div class="row mb-3">
-            <customed-input customedLabelClass="" customedDivClass="col-md-12" label="Address" placeholder="HomeAdress" v-model="form.address" />
+            <customed-input :inputValue="model.address" customedLabelClass="" customedDivClass="col-md-12" label="Address" placeholder="HomeAdress" v-model="form.address" />
         </div>
         <div class="row mb-3">
-            <customed-input customedLabelClass="" customedDivClass="col-md-4 pr-md-1" label="city" placeholder="city" v-model="form.city" />
-            <customed-input customedLabelClass="" customedDivClass="col-md-4 px-md-1" label="country" placeholder="country" v-model="form.country" />
-            <customed-input customedLabelClass="" customedDivClass="col-md-4 pl-md-1" label="zipCode" placeholder="zipCode" v-model="form.zipCode" />
+            <customed-input :inputValue="model.city" customedLabelClass="" customedDivClass="col-md-4 pr-md-1" label="city" placeholder="city" v-model="form.city" />
+            <customed-input :inputValue="model.country" customedLabelClass="" customedDivClass="col-md-4 px-md-1" label="country" placeholder="country" v-model="form.country" />
+            <customed-input :inputValue="model.zipcode" customedLabelClass="" customedDivClass="col-md-4 pl-md-1" label="zipCode" placeholder="zipCode" v-model="form.zipCode" />
         </div>
         <div class="row mb-3">
-            <customed-textarea customedLabelClass="" textareaValue="hello" :rows="4" :cols="80" label="about Me" customedDivClass="col-md-8" customedTextareaClass="form-control" placeholder="Here can be your description" />
+            <customed-textarea customedLabelClass="" :textareaValue="model.about" :rows="4" :cols="80" label="about Me" customedDivClass="col-md-8" customedTextareaClass="form-control" placeholder="Here can be your description" />
         </div>
         <button class="btn btn-primary">Save</button>
     </card>
@@ -29,6 +29,14 @@
 import CustomedInput from '@/components/Customs/Inputs/CustomedInput.vue';
 import CustomedTextarea from "@/components/Customs/Inputs/CustomedTextarea.vue";
 export default {
+    props: {
+        model: {
+            type: Object,
+            default: () => {
+                return {};
+            }
+        }
+    },
     components: {
         CustomedTextarea,
         CustomedInput,

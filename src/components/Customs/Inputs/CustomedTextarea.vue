@@ -1,7 +1,7 @@
 <template>
     <div :class="customedDivClass">
         <label :class="customedLabelClass">{{ label }}</label>
-        <textarea v-model="text" @input="hanleInputChange" :rows="rows" :cols="cols" :class="customedTextareaClass" :placeholder="placeholder" />
+        <textarea val v-model="text" @input="hanleInputChange" :rows="rows" :cols="cols" :class="customedTextareaClass" :placeholder="placeholder">{{value}}</textarea>
     </div>
 </template>
 
@@ -16,7 +16,8 @@ export default {
         "placeholder",
         "label",
         "textareaValue",
-        "customedLabelClass"
+        "customedLabelClass",
+        "value"
     ],
     data() {
         return {
