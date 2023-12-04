@@ -3,7 +3,6 @@ import VueRouter from "vue-router";
 import axios from "axios";
 
 //Styles
-import "@/assets/css/icons.css";
 import "@/assets/sass/black-dashboard.scss";
 
 //App

@@ -1,7 +1,6 @@
 <template>
     <card type="user">
-        <p class="card-text">
-        </p>
+        <p class="card-text"></p>
         <div class="author">
             <div class="block block-one"></div>
             <div class="block block-two"></div>
