@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-md-8">
-            <profile-form :model="model"></profile-form>
+            <profile-form :defaultValues="defaultValues"></profile-form>
         </div>
         <div class="col-md-4">
             <user-card :user="user"></user-card>
@@ -19,7 +19,7 @@ export default {
     },
     data() {
         return {
-            model: {
+            defaultValues: {
                 company: 'Creative Code Inc.',
                 email: 'mike@email.com',
                 username: 'michael23',

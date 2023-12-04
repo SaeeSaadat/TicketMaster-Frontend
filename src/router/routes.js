@@ -8,7 +8,8 @@ const Login = () => import("@/pages/Auth/Login.vue");
 const Signup = () => import("@/pages/Auth/Signup.vue");
 
 const Ticket = () => import("@/pages/Tickets/Ticket.vue");
-const AllBusinessTickets = () => import("@/pages/Tickets/AllBusinessTickets.vue");
+const AllBusinessTickets = () =>
+	import("@/pages/Tickets/AllBusinessTickets.vue");
 const AllUserTickets = () => import("@/pages/Tickets/AllUserTickets.vue");
 
 const NotFound = () => import("@/components/NotFoundPage.vue");
@@ -25,26 +26,32 @@ const routes = [
 		children: [
 			{
 				path: "main",
+				name: "Dashboard",
 				component: MainPage,
 			},
 			{
 				path: "userProfile",
+				name: "Profile",
 				component: UserProfile,
 			},
 			{
 				path: "businessProfile",
+				name: "Profile",
 				component: BusinessProfile,
 			},
 			{
 				path: "ticket",
+				name: "Ticket",
 				component: Ticket,
 			},
 			{
 				path: "businessTickets",
+				name: "All Tickets",
 				component: AllBusinessTickets,
 			},
 			{
 				path: "userTickets",
+				name: "All Tickets",
 				component: AllUserTickets,
 			},
 		],
