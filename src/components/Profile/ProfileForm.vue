@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import CustomedInput from '@/components/Inputs/CustomedInput.vue';
-import CustomedTextarea from "@/components/Inputs/CustomedTextarea.vue";
+import CustomedInput from '@/components/Customs/Inputs/CustomedInput.vue';
+import CustomedTextarea from "@/components/Customs/Inputs/CustomedTextarea.vue";
 export default {
     components: {
         CustomedTextarea,

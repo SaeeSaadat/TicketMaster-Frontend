@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Sidebar class="sidebar" />
+        <Sidebar />
         <div class="main-panel">
             <Header />
             <div class="content">

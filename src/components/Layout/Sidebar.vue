@@ -1,7 +1,27 @@
 <template>
-    <div class="col">
-        <a class="text-white row" href="/dashboard/main" icon="tim-icons icon-chart-pie-36"> Dashboard</a>
-        <a class="text-white row" href="/dashboard/icons" icon="tim-icons icon-atom">Icons </a>
-        <a class="text-white row" href="/dashboard/profile" icon="tim-icons icon-single-02"> Profile</a>
+    <div class="col sidebar">
+        <a v-for="i in sidebarItems" class="text-white row btn btn-block mt-3" :href="i.href">{{i.innerText}}</a>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            sidebarItems: [{
+                    href: "/dashboard/main",
+                    innerText: "Dashboard"
+                },
+                {
+                    href: "/dashboard/icons",
+                    innerText: "Icons"
+                },
+                {
+                    href: "/dashboard/profile",
+                    innerText: "Profile"
+                },
+            ]
+        }
+    },
+};
+</script>
