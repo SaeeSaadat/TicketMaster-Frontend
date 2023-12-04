@@ -1,12 +1,18 @@
 import VueRouter from "vue-router";
 
 const MainPage = () => import("@/pages/MainPage.vue");
-const Profile = () => import("@/pages/Profile.vue");
-const Icons = () => import("@/pages/Icons.vue");
-const NotFound = () => import("@/components/NotFoundPage.vue");
+const BusinessProfile = () => import("@/pages/Profile/Business.vue");
+const UserProfile = () => import("@/pages/Profile/User.vue");
+
 const Login = () => import("@/pages/Auth/Login.vue");
 const Signup = () => import("@/pages/Auth/Signup.vue");
-const DashboardLayout = () => import("@/components/Layout/FullPage.vue");
+
+const Ticket = () => import("@/pages/Tickets/Ticket.vue");
+const AllBusinessTickets = () => import("@/pages/Tickets/AllBusinessTickets.vue");
+const AllUserTickets = () => import("@/pages/Tickets/AllUserTickets.vue");
+
+const NotFound = () => import("@/components/NotFoundPage.vue");
+const DashboardLayout = () => import("@/Layout/FullPage.vue");
 
 const routes = [
 	{ path: "/", redirect: "/login" },
@@ -14,23 +20,32 @@ const routes = [
 	{ path: "/signup", component: Signup },
 	{
 		path: "/dashboard",
-		component: DashboardLayout,
 		redirect: "/dashboard/main",
+		component: DashboardLayout,
 		children: [
 			{
 				path: "main",
-				name: "Dashboard",
 				component: MainPage,
 			},
 			{
-				path: "profile",
-				name: "profile",
-				component: Profile,
+				path: "userProfile",
+				component: UserProfile,
 			},
 			{
-				path: "icons",
-				name: "icons",
-				component: Icons,
+				path: "businessProfile",
+				component: BusinessProfile,
+			},
+			{
+				path: "ticket",
+				component: Ticket,
+			},
+			{
+				path: "businessTickets",
+				component: AllBusinessTickets,
+			},
+			{
+				path: "userTickets",
+				component: AllUserTickets,
 			},
 		],
 	},
@@ -40,13 +55,8 @@ const routes = [
 const router = new VueRouter({
 	mode: "history",
 	routes,
-	linkExactActiveClass: "active",
 	scrollBehavior: (to) => {
-		if (to.hash) {
-			return { selector: to.hash };
-		} else {
-			return { x: 0, y: 0 };
-		}
+		return to.hash ? { selector: to.hash } : { x: 0, y: 0 };
 	},
 });
 
