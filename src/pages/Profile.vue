@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import ProfileForm from '../components/Profile/ProfileForm.vue';
-import UserCard from '../components/Profile/UserCard.vue'
+import ProfileForm from '@/components/Profile/ProfileForm.vue';
+import UserCard from '@/components/Profile/UserCard.vue'
 export default {
     components: {
         ProfileForm,
