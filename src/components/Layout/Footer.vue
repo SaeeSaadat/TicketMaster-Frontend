@@ -20,7 +20,7 @@
       </ul>
       <div class="copyright">
         © 2023 made with <i class="tim-icons icon-heart-2"></i> by
-        <a href="https://www.binarcode.com" target="_blank" rel="noopener">ASD Project Group</a>
+        <a href="https://github.com/SaeeSaadat/TicketMaster" target="_blank">ASD Project Group</a>
       </div>
     </div>
   </footer>
