@@ -1,5 +1,3 @@
-import VueRouter from "vue-router";
-
 const MainPage = () => import("@/pages/MainPage.vue");
 const BusinessProfile = () => import("@/pages/Profile/Business.vue");
 const UserProfile = () => import("@/pages/Profile/User.vue");
@@ -8,8 +6,7 @@ const Login = () => import("@/pages/Auth/Login.vue");
 const Signup = () => import("@/pages/Auth/Signup.vue");
 
 const Ticket = () => import("@/pages/Tickets/Ticket.vue");
-const AllBusinessTickets = () =>
-	import("@/pages/Tickets/AllBusinessTickets.vue");
+const AllBusinessTickets = () => import("@/pages/Tickets/AllBusinessTickets.vue");
 const AllUserTickets = () => import("@/pages/Tickets/AllUserTickets.vue");
 
 const NotFound = () => import("@/components/NotFoundPage.vue");
@@ -59,12 +56,4 @@ const routes = [
 	{ path: "*", component: NotFound },
 ];
 
-const router = new VueRouter({
-	mode: "history",
-	routes,
-	scrollBehavior: (to) => {
-		return to.hash ? { selector: to.hash } : { x: 0, y: 0 };
-	},
-});
-
-export default router;
+export default routes;
