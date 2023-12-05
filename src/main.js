@@ -15,7 +15,6 @@ import router from "./router/routes.js";
 //Components
 import Card from "@/components/Customs/Card/CustomedCard.vue";
 
-axios.defaults.baseURL = process.env.VUE_APP_BASE_URL;
 Vue.mixin({
 	beforeCreated() {
 		axios.interceptors.response.use("", (error) => {
@@ -23,7 +22,12 @@ Vue.mixin({
 		});
 	},
 });
-Vue.config.globalProperties.axios = axios;
+
+Object.defineProperty(Vue.prototype, "$axios", {
+	value: axios.create({
+		baseURL: import.meta.env.VUE_APP_BASE_URL,
+	}),
+});
 
 Vue.component(Card.name, Card);
 
