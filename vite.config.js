@@ -4,7 +4,7 @@ import { resolve } from "path";
 
 export default defineConfig({
 	server: {
-		host: import.meta.env.VITE_HOST,
+		host: process.env.VITE_HOST,
 	},
 	plugins: [vue()],
 	resolve: {

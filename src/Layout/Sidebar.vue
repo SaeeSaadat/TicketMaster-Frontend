@@ -1,6 +1,6 @@
 <template>
-    <div class="col sidebar">
-        <a v-for="i in sidebarItems" class="text-white row btn btn-block mt-3" :href="i.href">{{i.innerText}}</a>
+    <div class="col sidebar bg-white" data="vue">
+        <a v-for="i in sidebarItems" class="text-h3 btn btn-simple w-100 mt-3" :href="i.href"><u class="h4">{{i.innerText}}</u></a>
     </div>
 </template>
 
