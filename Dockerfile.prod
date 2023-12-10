@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY . .
 
-EXPOSE 3000
+RUN npm install
 
-RUN npm install http-server -g
+ENV VITE_HOST=0.0.0.0
 
-RUN npm install && npm run build
+EXPOSE 4173
 
-CMD http-server ./dist
+CMD ["npm","run","prod"]

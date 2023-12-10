@@ -1,6 +1,6 @@
 <template>
     <div class="col sidebar bg-white" data="vue">
-        <a v-for="i in sidebarItems" class="text-h3 btn btn-simple border-0 mt-3" :href="i.href"><u class="h3 text-white">{{i.innerText}}</u></a>
+        <a v-for="(value,index) in sidebarItems" class="text-h3 btn btn-simple border-0" :href="value.href"><section class="h3 text-white">{{value.innerText}}</section></a>
     </div>
 </template>
 
