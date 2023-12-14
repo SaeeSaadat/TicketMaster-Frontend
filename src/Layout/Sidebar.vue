@@ -1,6 +1,7 @@
 <template>
     <div class="col sidebar bg-white" data="vue">
-        <a v-for="(value,index) in sidebarItems" class="text-h3 btn btn-simple border-0" :href="value.href"><section class="h3 text-white">{{value.innerText}}</section></a>
+        <button class="btn btn-info">Product</button>
+        <a v-for="(value,index) in sidebarItems" class="text-h3 btn btn-simple border-0" :href="value.href"><p class="h3 text-white">{{value.innerText}}</p></a>
     </div>
 </template>
 
@@ -33,12 +34,12 @@ export default {
                     innerText: "ticket"
                 },
                 {
-                    href: "/dashboard/businessTickets",
-                    innerText: "businessTickets"
+                    href: "/dashboard/myTickets",
+                    innerText: "myTickets"
                 },
                 {
-                    href: "/dashboard/userTickets",
-                    innerText: "userTickets"
+                    href: "/dashboard/myProduct",
+                    innerText: "myProduct"
                 },
                 
             ]
