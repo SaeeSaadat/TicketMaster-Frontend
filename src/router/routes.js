@@ -9,8 +9,7 @@ const Signup = () => import("@/pages/Auth/Signup.vue");
 
 //Tickets
 const Ticket = () => import("@/pages/Tickets/Ticket.vue");
-const AllBusinessTickets = () => import("@/pages/Tickets/AllBusinessTickets.vue");
-const AllUserTickets = () => import("@/pages/Tickets/AllUserTickets.vue");
+const AllTickets = () => import("@/pages/Tickets/AllTickets.vue");
 
 //Layout & Components
 const NotFound = () => import("@/components/NotFoundPage.vue");
@@ -22,22 +21,20 @@ const routes = [
 	{ path: "/signup", component: Signup },
 	{
 		path: "/dashboard",
-		redirect: "/dashboard/main",
 		component: DashboardLayout,
-		children: [
-			{
-				path: "main",
+		children: [{
+				path: "/",
 				name: "Dashboard",
 				component: MainPage,
 			},
 			{
 				path: "userProfile",
-				name: "Profile",
+				name: "userProfile",
 				component: UserProfile,
 			},
 			{
 				path: "businessProfile",
-				name: "Profile",
+				name: "businessProfile",
 				component: BusinessProfile,
 			},
 			{
@@ -46,16 +43,16 @@ const routes = [
 				component: Ticket,
 			},
 			{
-				path: "businessTickets",
+				path: "myTickets",
 				name: "All Tickets",
-				component: AllBusinessTickets,
+				component: AllTickets,
 			},
 			{
-				path: "userTickets",
-				name: "All Tickets",
-				component: AllUserTickets,
-			},
-		],
+				path: "myProduct",
+				name: "manage/register product",
+				component: AllTickets,
+			}	
+		]
 	},
 	{ path: "*", component: NotFound },
 ];
