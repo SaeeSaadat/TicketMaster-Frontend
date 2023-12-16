@@ -1,9 +1,10 @@
 <template>
     <div class="col sidebar bg-white" data="vue">
-        <a href="/dashboard/myProduct" class="btn btn-info text-white">myProduct</a>
+        <a href="/dashboard/myProduct" class="btn btn-info text-white mt-5 mb-4">myProduct</a>
         <a v-for="(value, index) in sidebarItems" class="text-h3 btn btn-simple border-0" :href="value.href">
             <p class="h3 text-white">{{ value.innerText }}</p>
         </a>
+        <a class="btn btn-danger mt-5" href="/">Logout</a>
     </div>
 </template>
 

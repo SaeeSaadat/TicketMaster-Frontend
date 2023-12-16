@@ -1,5 +1,5 @@
-//MainPage
-const MainPage = () => import("@/pages/MainPage.vue");
+//MainPages
+const Dashboard = () => import("@/pages/Dashboard.vue");
 const BusinessProfile = () => import("@/pages/Profile/Business.vue");
 const UserProfile = () => import("@/pages/Profile/User.vue");
 
@@ -25,7 +25,7 @@ const routes = [
 		children: [{
 				path: "/",
 				name: "Dashboard",
-				component: MainPage,
+				component: Dashboard,
 			},
 			{
 				path: "userProfile",
