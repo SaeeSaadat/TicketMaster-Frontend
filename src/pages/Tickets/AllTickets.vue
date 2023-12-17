@@ -10,14 +10,18 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <a href="#" v-for="i in tickets" class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                <div v-for="i in tickets" class="font-icon-list col-2">
                     <div id="cardBodyDetails">
-                        <h2>Title:</h2>
-                        <h4>{{ resizeText(i.title, "title") }}</h4>
-                        <h2 class="mt-5">Description:</h2>
-                        <h4 class="mx-2">{{ resizeText(i.description, "description") }}</h4>
+                        <p class="h3 mb-2">{{ resizeText(i.title, "title") }}</p>
+                        <div class="dflex">
+                            <i class="fa fa-clock"></i>&nbsp;
+                            <span>1402/09/26</span>
+                        </div>
+                        <i class="text-white fa fa-lightbulb mt-3"></i>
+                        <p></p>
+                        <a href="#" class="btn btn-primary mt-3">Show</a>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
@@ -28,80 +32,25 @@ export default {
     data() {
         return {
             tickets: [{
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
+                    title: "testing the title"
                 },
                 {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
+                    title: "testing the title"
                 },
                 {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
+                    title: "testing the title"
                 },
                 {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
+                    title: "testing the title"
                 },
                 {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
+                    title: "testing the title"
                 },
                 {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
+                    title: "testing the title"
                 },
                 {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
-                },
-                {
-                    title: "testing the title",
-                    description: "Im testing the description part of the code which is foresting the desc part. i dont know what is wrong with it so i will text like lorem ipsum :)",
+                    title: "testing the title"
                 },
             ],
         };
