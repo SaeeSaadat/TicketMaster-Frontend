@@ -1,6 +1,19 @@
 <template>
     <div>
-        <profile-form :model="model"></profile-form>
+        <card class="mx-auto" style="width:40%;">
+            <p>Id: 123085132468152391981324198ifud665234986123413212349182340189</p>
+            <p>Time: 12304981230946102397461023</p>
+    
+            <h1 class="title mt-3 text-center">Title of the Ticket</h1>
+            <p>description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente vero incidunt blanditiis odit quisquam doloremque atque aperiam modi dicta quaerat magni consectetur deleniti repudiandae, nisi iusto vel commodi in odio.</p>
+    
+            <div class="d-flex justify-content-between">
+                <card class="w-25">text</card>
+                <card class="w-25">asdfa</card>
+                <card class="w-25">sdf</card>
+            </div>
+            hello
+        </card>
     </div>
 </template>
 
