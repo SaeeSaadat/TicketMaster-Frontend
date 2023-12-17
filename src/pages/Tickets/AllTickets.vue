@@ -17,7 +17,7 @@
                             <i class="fa fa-clock"></i>&nbsp;
                             <span>1402/09/26</span>
                         </div>
-                        <i class="text-white fa fa-lightbulb mt-3"></i>
+                        <i title="Lamp" class="text-white fa fa-lightbulb mt-3"></i>
                         <p></p>
                         <a href="#" class="btn btn-primary mt-3">Show</a>
                     </div>
