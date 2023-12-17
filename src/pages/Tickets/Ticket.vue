@@ -1,11 +1,6 @@
 <template>
-    <div class="row">
-        <div class="col-md-8">
-            <profile-form :model="model"></profile-form>
-        </div>
-        <div class="col-md-4">
-            <user-card :user="user"></user-card>
-        </div>
+    <div>
+        <profile-form :model="model"></profile-form>
     </div>
 </template>
 
