@@ -47,10 +47,10 @@ export default {
                     username: this.username,
                     password: this.password
                 }).then(() => {
+                    this.$toast.success('Registered Successfully!');
                     setTimeout(() => {
-                        this.$toast.success('Registered Successfully!');
-                    }, 2000);
-                    this.$router.push("/login")
+                        this.$router.push("/login")
+                    }, 1500);
                 }).catch(() => {
                     this.$toast.error('Something Went Wrong ...');
                 })

@@ -41,10 +41,10 @@ export default {
                     username: this.username,
                     password: this.password
                 }).then(() => {
+                    this.$toast.success('Login Successfully!');
                     setTimeout(() => {
-                        this.$toast.success('Login Successfully!');
+                        this.$router.push("/dashboard")
                     }, 2000);
-                    this.$router.push("/dashboard")
                 }).catch(() => {
                     this.$toast.error('Something Went Wrong ...');
                 })
