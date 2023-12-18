@@ -1,6 +1,6 @@
 <template>
     <div>
-        <card type="user" class="h-50 w-50 mx-auto" style="margin-top:90px;">
+        <card type="user" class="h-50 w-75 mx-auto" style="margin-top:90px;">
             <p class="card-text"></p>
             <div class="author">
                 <div class="block block-one"></div>
