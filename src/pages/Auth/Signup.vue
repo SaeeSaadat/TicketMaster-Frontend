@@ -33,7 +33,7 @@ export default {
         };
     },
     methods: {
-        async Signup() {
+        Signup() {
             if (!this.username)
                 this.$toast.error("please enter a username ...");
             else if (!this.password)
@@ -43,7 +43,7 @@ export default {
             else {
                 // checkEmptyInputs()
                 // validatePassword()
-                await axios.post("/auth/register", {
+                axios.post("/auth/register", {
                     username: this.username,
                     password: this.password
                 }).then(() => {
@@ -55,9 +55,6 @@ export default {
                     this.$toast.error('Something Went Wrong ...');
                 })
             }
-
-
-
         },
     }
 };

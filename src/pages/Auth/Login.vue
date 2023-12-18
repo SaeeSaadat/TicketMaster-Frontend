@@ -17,6 +17,7 @@
 
 
 <script>
+import axios from "axios"
 import CustomedInput from '@/components/Customs/Inputs/CustomedInput.vue';
 export default {
     components: {
@@ -28,15 +29,15 @@ export default {
             password: ""
         };
     },
-    methods:{
-        async Login(){
+    methods: {
+        Login() {
             if (!this.username)
-                this.$toast.error("please enter a username ...");
+                this.$toast.error("please enter your username ...");
             else if (!this.password)
-                this.$toast.error("please enter a password ...");
+                this.$toast.error("please enter your password ...");
             else {
                 // checkEmptyInputs()
-                await axios.post("/auth/login", {
+                axios.post("/auth/login", {
                     username: this.username,
                     password: this.password
                 }).then(() => {
