@@ -14,11 +14,11 @@
         </a>
         <p class="mb-4"></p>
         <button @click="Logout" class="btn btn-simple mt-5 w-100">
-                      <div class="d-inline-flex">
-                        <i class="fa fa-power-off my-auto"></i>
-                        <span class="my-auto ml-2">Logout</span>
-                      </div>
-                    </button>
+                          <div class="d-inline-flex">
+                            <i class="fa fa-power-off my-auto"></i>
+                            <span class="my-auto ml-2">Logout</span>
+                          </div>
+                        </button>
     </div>
 </template>
 
@@ -59,7 +59,9 @@ export default {
         async Logout() {
             axios.post("/auth/logout").then(() => {
                 this.$toast.success('Logout Successfully!');
-                this.$router.push("/login");
+                setTimeout(() => {
+                    this.$router.push("/login");
+                }, 1500);
             })
         },
     },
