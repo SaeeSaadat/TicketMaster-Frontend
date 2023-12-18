@@ -9,7 +9,7 @@
             <div class="row mb-5">
                 <customed-input type="password" customedLabelClass="text-white" customedDivClass="col-12" label="Password :" placeholder="Please Enter Your Password ..." v-model="password" />
             </div>
-            <button class="btn btn-primary mr-5">Login</button>
+            <button @click="Login" class="btn btn-primary mr-5">Login</button>
             <a href="/signup">Create New Account</a>
         </card>
     </div>
@@ -28,5 +28,27 @@ export default {
             password: ""
         };
     },
+    methods:{
+        async Login(){
+            if (!this.username)
+                this.$toast.error("please enter a username ...");
+            else if (!this.password)
+                this.$toast.error("please enter a password ...");
+            else {
+                // checkEmptyInputs()
+                await axios.post("/auth/login", {
+                    username: this.username,
+                    password: this.password
+                }).then(() => {
+                    setTimeout(() => {
+                        this.$toast.success('Login Successfully!');
+                    }, 2000);
+                    this.$router.push("/dashboard")
+                }).catch(() => {
+                    this.$toast.error('Something Went Wrong ...');
+                })
+            }
+        }
+    }
 };
 </script>

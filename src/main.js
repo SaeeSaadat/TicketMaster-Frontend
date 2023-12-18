@@ -10,8 +10,8 @@ import "@/Plugins/card.js"
 
 //Libraries
 import router from "@/Libraries/vue-router.js"
-import "@/Libraries/vue-notification.js"
 import "@/Libraries/axios.js"
+import "@/Libraries/vue-toast.js"
 
 new Vue({
 	router,

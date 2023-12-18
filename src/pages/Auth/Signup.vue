@@ -12,14 +12,14 @@
             <div class="row mb-5">
                 <customed-input customedLabelClass="text-white" customedDivClass="col-12" label="reEnter Password :" placeholder="Please reEnter Your Password ..." v-model="rePassword" type="password" />
             </div>
-            <button class="btn btn-primary mr-5">SignUp</button>
+            <button @click="Signup" class="btn btn-primary mr-5">SignUp</button>
             <a href="/login">Already have an Account!</a>
         </card>
     </div>
 </template>
 
-
 <script>
+import axios from "axios"
 import CustomedInput from '@/components/Customs/Inputs/CustomedInput.vue';
 export default {
     components: {
@@ -32,5 +32,33 @@ export default {
             rePassword: ""
         };
     },
+    methods: {
+        async Signup() {
+            if (!this.username)
+                this.$toast.error("please enter a username ...");
+            else if (!this.password)
+                this.$toast.error("please enter a password ...");
+            else if (!this.rePassword)
+                this.$toast.error("please re-enter your password...");
+            else {
+                // checkEmptyInputs()
+                // validatePassword()
+                await axios.post("/auth/register", {
+                    username: this.username,
+                    password: this.password
+                }).then(() => {
+                    setTimeout(() => {
+                        this.$toast.success('Registered Successfully!');
+                    }, 2000);
+                    this.$router.push("/login")
+                }).catch(() => {
+                    this.$toast.error('Something Went Wrong ...');
+                })
+            }
+
+
+
+        },
+    }
 };
 </script>
