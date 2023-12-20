@@ -1,7 +1,12 @@
 //MainPages
 const Dashboard = () => import("@/pages/Dashboard.vue");
-const BusinessProfile = () => import("@/pages/Profile/Business.vue");
+
+//User
 const UserProfile = () => import("@/pages/Profile/User.vue");
+const EditUser = () => import("@/pages/Profile/EditUser.vue")
+
+//Business
+const BusinessProfile = () => import("@/pages/Profile/Business.vue");
 
 //Auth
 const Login = () => import("@/pages/Auth/Login.vue");
@@ -51,7 +56,12 @@ const routes = [
 				path: "myProduct",
 				name: "manage/register product",
 				component: AllTickets,
-			}	
+			},
+			{
+				path: "editProfile",
+				name: "Edit Profile",
+				component: EditUser,
+			},
 		]
 	},
 	{ path: "*", component: NotFound },

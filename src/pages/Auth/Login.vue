@@ -9,7 +9,14 @@
             <div class="row mb-5">
                 <customed-input type="password" customedLabelClass="text-white" customedDivClass="col-12" label="Password :" placeholder="Please Enter Your Password ..." v-model="password" />
             </div>
-            <button @click="Login" class="btn btn-primary mr-5">Login</button>
+            <button @click="Login" class="btn btn-primary mr-5">
+                    <div v-if="!loading">
+                        Login
+                    </div>
+                    <div v-else>
+                        <i class="fa fa-spinner fa-spin"></i>Loading
+                    </div>
+                </button>
             <a href="/signup">Create New Account</a>
         </card>
     </div>
@@ -26,27 +33,33 @@ export default {
     data() {
         return {
             username: "",
-            password: ""
+            password: "",
+            loading: false
         };
     },
     methods: {
         Login() {
-            if (!this.username)
+            this.loading = true;
+            if (!this.username) {
                 this.$toast.error("please enter your username ...");
-            else if (!this.password)
+                this.loading = false;
+            } else if (!this.password) {
                 this.$toast.error("please enter your password ...");
-            else {
+                this.loading = false;
+            } else {
                 // checkEmptyInputs()
                 axios.post("/auth/login", {
                     username: this.username,
                     password: this.password
                 }).then(() => {
                     this.$toast.success('Login Successfully!');
+                    this.loading = true;
                     setTimeout(() => {
                         this.$router.push("/dashboard")
                     }, 2000);
                 }).catch(() => {
                     this.$toast.error('Something Went Wrong ...');
+                    this.loading = false;
                 })
             }
         }

@@ -8,14 +8,3 @@
         <a href="#" class="btn btn-primary w-100">Edit</a>
     </card>
 </template>
-
-<script>
-import ProfileForm from "@/components/Profile/ProfileForm.vue";
-import UserCard from "@/components/Profile/UserCard.vue";
-export default {
-    components: {
-        ProfileForm,
-        UserCard,
-    }
-};
-</script>
