@@ -10,7 +10,7 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div v-for="i in tickets" class="font-icon-list col-2">
+                <div v-for="i in tickets" class="font-icon-list col-4">
                     <div id="cardBodyDetails">
                         <p class="h3 mb-2">{{ resizeText(i.title, "title") }}</p>
                         <div class="dflex">
@@ -56,13 +56,8 @@ export default {
         };
     },
     methods: {
-        resizeText(text, type) {
-            switch (type) {
-                case "title":
-                    return text.length >= 27 ? text.substr(0, 25) + "..." : text;
-                case "description":
-                    return text.length >= 27 ? text.substr(0, 55) + "..." : text;
-            }
+        resizeText(text) {
+            return text.length >= 27 ? text.substr(0, 20) + "..." : text;
         },
     },
 };
