@@ -2,11 +2,10 @@
 const Dashboard = () => import("@/pages/Dashboard.vue");
 
 //User
-const UserProfile = () => import("@/pages/Profile/User.vue");
-const EditUser = () => import("@/pages/Profile/EditUser.vue")
+const UserProfile = () => import("@/pages/UserProfile/User.vue");
+const EditUser = () => import("@/pages/UserProfile/EditUser.vue")
 
 //Business
-const BusinessProfile = () => import("@/pages/Profile/Business.vue");
 const Product = () => import("@/pages/Product.vue")
 
 //Auth
@@ -37,16 +36,6 @@ const routes = [
 				path: "userProfile",
 				name: "userProfile",
 				component: UserProfile,
-			},
-			{
-				path: "businessProfile",
-				name: "businessProfile",
-				component: BusinessProfile,
-			},
-			{
-				path: "ticket",
-				name: "Ticket",
-				component: Ticket,
 			},
 			{
 				path: "myTickets",
