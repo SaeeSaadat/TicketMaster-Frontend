@@ -7,6 +7,7 @@ const EditUser = () => import("@/pages/Profile/EditUser.vue")
 
 //Business
 const BusinessProfile = () => import("@/pages/Profile/Business.vue");
+const Product = () => import("@/pages/Product.vue")
 
 //Auth
 const Login = () => import("@/pages/Auth/Login.vue");
@@ -14,7 +15,7 @@ const Signup = () => import("@/pages/Auth/Signup.vue");
 
 //Tickets
 const Ticket = () => import("@/pages/Tickets/Ticket.vue");
-const AllTickets = () => import("@/pages/Tickets/AllTickets.vue");
+const AllUserTickets = () => import("@/pages/Tickets/AllUserTickets.vue");
 
 //Layout & Components
 const NotFound = () => import("@/components/NotFoundPage.vue");
@@ -50,12 +51,12 @@ const routes = [
 			{
 				path: "myTickets",
 				name: "All Tickets",
-				component: AllTickets,
+				component: AllUserTickets,
 			},
 			{
 				path: "myProduct",
 				name: "manage/register product",
-				component: AllTickets,
+				component: Product,
 			},
 			{
 				path: "editProfile",
