@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import CustomedInput from "@/components/Customs/Inputs/CustomedInput.vue"
+import CustomedInput from "@/components/Customs/CustomedInput.vue"
 export default {
     components: {
         CustomedInput

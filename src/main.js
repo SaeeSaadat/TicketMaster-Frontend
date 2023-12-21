@@ -6,13 +6,11 @@ import App from "./App.vue";
 import "@/assets/sass/black-dashboard.scss";
 
 //Plugins
+import router from "@/Plugins/vue-router.js";
+import store from "@/Plugins/store";
 import "@/Plugins/card.js";
-
-//Libraries
-import router from "@/Libraries/vue-router.js";
-import "@/Libraries/axios.js";
-import "@/Libraries/vue-toast.js";
-import store from "@/Libraries/store";
+import "@/Plugins/axios.js";
+import "@/Plugins/vue-toast.js";
 
 new Vue({
 	router,

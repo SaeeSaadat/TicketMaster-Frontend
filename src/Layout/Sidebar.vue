@@ -42,11 +42,6 @@ export default {
                     href: "/dashboard",
                     innerText: "Dashboard",
                 },
-                {
-                    icon: "fa-ticket",
-                    href: "/dashboard/ticket",
-                    innerText: "Ticket",
-                },
             ],
         };
     },
@@ -56,7 +51,7 @@ export default {
                 this.$toast.success('Logout Successfully!');
                 setTimeout(() => {
                     this.$router.push("/login");
-                }, 1500);
+                }, 1000);
             })
         },
     },

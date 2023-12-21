@@ -1,7 +1,7 @@
 import Vue from "vue";
 import axios from "axios";
-import Router from "@/Libraries/vue-router.js";
-import Store from "@/Libraries/store.js";
+import Router from "@/Plugins/vue-router.js";
+import Store from "@/Plugins/store.js";
 
 axios.defaults.baseURL = import.meta.env.VITE_APP_BASE_URL;
 

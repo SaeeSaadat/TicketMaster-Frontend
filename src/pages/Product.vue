@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import ProductManagePage from "@/components/Product/ProductManagePage.vue";
+import ProductProfile from "@/components/Product/ProductProfile.vue";
 import AllProductTickets from "@/components/Product/AllProductTickets.vue";
 export default {
     components: {
         AllProductTickets,
-        ProductManagePage
+        ProductProfile
     },
 };
 </script>

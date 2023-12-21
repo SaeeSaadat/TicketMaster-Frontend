@@ -25,7 +25,7 @@
 
 <script>
 import axios from "axios"
-import CustomedInput from '@/components/Customs/Inputs/CustomedInput.vue';
+import CustomedInput from '@/components/Customs/CustomedInput.vue';
 export default {
     components: {
         CustomedInput,
