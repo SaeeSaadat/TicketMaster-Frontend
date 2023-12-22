@@ -52,6 +52,11 @@ const routes = [
 				name: "Edit Profile",
 				component: EditUser,
 			},
+			{
+				path: "ticket",
+				name: "ticket",
+				component: Ticket,
+			},
 		]
 	},
 	{ path: "*", component: NotFound },

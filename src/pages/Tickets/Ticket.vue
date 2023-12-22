@@ -1,21 +1,16 @@
 <template>
     <div>
-        <card class="mx-auto" style="width:40%;">
-            <div class="dflex">
-                <i class="fa fa-id-card mr-2"></i>
-                <span>Id: 12308514198ifud665234986123413212349182340189</span>
+        <card class="w-75 mx-auto text-center p-5">
+            <h1>Title: Title</h1>
+            <h4>1402/09/30 18:55 By Bardia</h4>
+            <h2>Status: Open/Closed/Pending/Needs Answer</h2>
+            <div class="row text-center mx-auto">
+                <card class="mr-5 ml-4" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, tempora consequatur! Tenetur vero dolorem iusto cupiditate officia omnis mollitia quo dicta vel unde praesentium debitis repellat, ab nesciunt maxime numquam?</card>
+                <card class="" style="width:60%">
+                    <p>ChatBox</p>
+                    
+                </card>
             </div>
-            <div class="dflex">
-                <i class="fa fa-clock mr-2"></i>
-                <span>Time: 12304981230946102397461023</span>
-            </div>
-            <div class="dflex">
-                <i class="fa fa-hourglass mr-2"></i>
-                <span>Status: Waiting</span>
-            </div>
-    
-            <h1 class="title mt-4 text-left">Title of the Ticket</h1>
-            <p>description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente vero incidunt blanditiis odit quisquam doloremque atque aperiam modi dicta quaerat magni consectetur deleniti repudiandae, nisi iusto vel commodi in odio.</p>
         </card>
     </div>
 </template>
