@@ -22,7 +22,7 @@
                             <span>1402/09/26    14:25</span>
                         </div>
                         <p>Username</p>
-                        <a :href="'/dashboard/tickets/1'" class="btn btn-primary mt-3">Show</a>
+                        <a :href="'/dashboard/tickets/'" class="btn btn-primary mt-3">Show</a>
                     </div>
                 </div>
             </div>

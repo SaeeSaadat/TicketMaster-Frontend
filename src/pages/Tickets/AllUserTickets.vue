@@ -19,7 +19,7 @@
                         </div>
                         <i title="Lamp" class="text-white fa fa-lightbulb mt-3"></i>
                         <p></p>
-                        <a href="#" class="btn btn-primary mt-3">Show</a>
+                        <a href="/dashboard/ticket" class="btn btn-primary mt-3">Show</a>
                     </div>
                 </div>
             </div>
