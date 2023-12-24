@@ -10,13 +10,13 @@
                 <customed-input type="password" customedLabelClass="text-white" customedDivClass="col-12" label="Password :" placeholder="Please Enter Your Password ..." v-model="password" />
             </div>
             <button @click="Login" class="btn btn-primary mr-5">
-                    <div v-if="!loading">
-                        Login
-                    </div>
-                    <div v-else>
-                        <i class="fa fa-spinner fa-spin"></i>Loading
-                    </div>
-                </button>
+                                                <div v-if="!loading">
+                                                    Login
+                                                </div>
+                                                <div v-else>
+                                                    <i class="fa fa-spinner fa-spin"></i>Loading
+                                                </div>
+                                            </button>
             <a href="/signup">Create New Account</a>
         </card>
     </div>
@@ -40,26 +40,29 @@ export default {
     methods: {
         Login() {
             this.loading = true;
-            if (!this.username) {
-                this.$toast.error("please enter your username ...");
-                this.loading = false;
-            } else if (!this.password) {
-                this.$toast.error("please enter your password ...");
-                this.loading = false;
+            
+            const inputsError = CheckEmptyInputs(this.username, this.password)
+
+            if (inputsError) {
+                this.loading = false
+                this.$toast.error(inputsError)
             } else {
-                // checkEmptyInputs()
                 axios.post("/auth/login", {
                     username: this.username,
                     password: this.password
-                }).then(() => {
+                }).then((res) => {
+                    this.loading = false;
+
+                    StoreCurrentUserData(res.data.id, res.data.username, res.data.type, this.$store.state)
+
                     this.$toast.success('Login Successfully!');
-                    this.loading = true;
+
                     setTimeout(() => {
                         this.$router.push("/dashboard")
-                    }, 2000);
-                }).catch(() => {
-                    this.$toast.error('Something Went Wrong ...');
-                    this.loading = false;
+                    }, 1000);
+                }).catch((error) => {
+                    const message = HandleLoginError(error)
+                    this.$toast.error(message)
                 })
             }
         }

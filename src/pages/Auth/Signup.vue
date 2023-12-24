@@ -12,7 +12,14 @@
             <div class="row mb-5">
                 <customed-input customedLabelClass="text-white" customedDivClass="col-12" label="reEnter Password :" placeholder="Please reEnter Your Password ..." v-model="rePassword" type="password" />
             </div>
-            <button @click="Signup" class="btn btn-primary mr-5">SignUp</button>
+            <button @click="Signup" class="btn btn-primary mr-5">
+                                <div v-if="!loading">
+                                    SignUp
+                                </div>
+                                <div v-else>
+                                    <i class="fa fa-spinner fa-spin"></i>Loading
+                                </div>
+                            </button>
             <a href="/login">Already have an Account!</a>
         </card>
     </div>
@@ -29,18 +36,23 @@ export default {
         return {
             username: "",
             password: "",
-            rePassword: ""
+            rePassword: "",
+            loading: false
         };
     },
     methods: {
         Signup() {
-            if (!this.username)
+            this.loading = true
+            if (!this.username) {
                 this.$toast.error("please enter a username ...");
-            else if (!this.password)
+                this.loading = false
+            } else if (!this.password) {
                 this.$toast.error("please enter a password ...");
-            else if (!this.rePassword)
+                this.loading = false
+            } else if (!this.rePassword) {
                 this.$toast.error("please re-enter your password...");
-            else {
+                this.loading = false
+            } else {
                 // checkEmptyInputs()
                 // validatePassword()
                 axios.post("/auth/register", {
@@ -48,11 +60,13 @@ export default {
                     password: this.password
                 }).then(() => {
                     this.$toast.success('Registered Successfully!');
+                    this.loading = false
                     setTimeout(() => {
                         this.$router.push("/login")
-                    }, 1500);
+                    }, 1000);
                 }).catch(() => {
                     this.$toast.error('Something Went Wrong ...');
+                    this.loading = false
                 })
             }
         },
