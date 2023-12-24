@@ -3,7 +3,8 @@
         <a href="/dashboard/myProduct" class="btn btn-simple mt-5 mb-4 w-100">
             <div class="d-inline-flex">
                 <i class="fa fa-cart-shopping my-auto"></i>
-                <span class="my-auto ml-3">My Product</span>
+                <span v-if="this.$store.state.personType == 'admin'" class="my-auto ml-3">Manage Product</span>
+                <span v-else-if="this.$store.state.personType == 'user'" class="my-auto ml-3">Register Product</span>
             </div>
         </a>
         <a v-for="(value, index) in sidebarItems" class="btn btn-simple border-0 w-100 text-left" :href="value.href">

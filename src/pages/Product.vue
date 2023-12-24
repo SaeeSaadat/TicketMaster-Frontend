@@ -1,15 +1,12 @@
 <template>
-    <!-- <div v-if="this.$store.state.personType=='admin'">
+    <div v-if="this.$store.state.personType=='admin'">
         <product-profile class="mb-5"/>
         <all-product-tickets />
     </div>
     <div v-else-if="this.$store.state.personType=='user'">
         <register-product/>
-    </div> -->
-    <div>
-        <product-profile class="mb-5"/>
-        <all-product-tickets />
     </div>
+
 </template>
 
 <script>
