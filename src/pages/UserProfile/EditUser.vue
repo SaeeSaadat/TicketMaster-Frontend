@@ -13,12 +13,3 @@
         <button class="btn btn-primary">Save</button>
     </card>
 </template>
-
-<script>
-import CustomedInput from "@/components/Customs/CustomedInput.vue"
-export default {
-    components: {
-        CustomedInput
-    }
-}
-</script>

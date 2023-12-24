@@ -5,12 +5,15 @@ import App from "./App.vue";
 //Styles
 import "@/assets/sass/black-dashboard.scss";
 
-//Plugins
+//Libraries
 import router from "@/Plugins/vue-router.js";
 import store from "@/Plugins/store";
-import "@/Plugins/card.js";
 import "@/Plugins/axios.js";
 import "@/Plugins/vue-toast.js";
+
+//Components
+import "@/Plugins/card.js";
+import "@/Plugins/customed-input.js";
 
 new Vue({
 	router,
