@@ -55,6 +55,7 @@ export default {
                     }, 1000);
                 })
                 .catch((error) => {
+                    this.loading = false
                     const message = HandleLoginError(error);
                     this.$toast.error(message);
                 });

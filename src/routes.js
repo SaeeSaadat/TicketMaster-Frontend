@@ -1,27 +1,28 @@
-//MainPages
-const Dashboard = () => import("@/pages/Dashboard.vue");
+//Layout & Components
+const ProjectLayout = () => import("@/Layout/FullPage.vue");
 
-//User
-const UserProfile = () => import("@/pages/UserProfile/User.vue");
-const EditUser = () => import("@/pages/UserProfile/EditUser.vue");
+//MainPage(Index)
+const ProductLink = () => import("@/pages/ProductLink.vue");
 
-//MyBusinessProduct
-const Product = () => import("@/pages/MyProduct.vue");
-
-//OtherBusinessProduct
-const BusinessProduct = () => import("@/pages/BusinessProduct");
-
-//Auth
+//Authentication
 const Login = () => import("@/pages/Auth/Login.vue");
 const Signup = () => import("@/pages/Auth/Signup.vue");
+
+//Product
+const MyProduct = () => import("@/pages/ProductProfile/MyProduct.vue");
+const UniqueProductPage = () => import("@/pages/ProductProfile/UniqueProductPage.vue");
+
+//User
+const UserInfo = () => import("@/pages/UserProfile/UserInfo.vue");
+const EditUser = () => import("@/pages/UserProfile/EditUser.vue");
 
 //Tickets
 const Ticket = () => import("@/pages/Tickets/Ticket.vue");
 const AllUserTickets = () => import("@/pages/Tickets/AllUserTickets.vue");
 
-//Layout & Components
-const NotFound = () => import("@/pages/NotFoundPage.vue");
-const DashboardLayout = () => import("@/Layout/FullPage.vue");
+//404 Page
+const PageNotFound = () => import("@/pages/404/NotFoundPage.vue");
+
 
 const routes = [
 	{ path: "/", redirect: "/login" },
@@ -29,27 +30,27 @@ const routes = [
 	{ path: "/signup", component: Signup },
 	{
 		path: "/dashboard",
-		component: DashboardLayout,
+		component: ProjectLayout,
 		children: [
 			{
 				path: "/",
 				name: "Dashboard",
-				component: Dashboard,
+				component: ProductLink,
 			},
 			{
-				path: "userProfile",
-				name: "userProfile",
-				component: UserProfile,
+				path: "userInfo",
+				name: "myProfile",
+				component: UserInfo,
 			},
 			{
 				path: "myTickets",
-				name: "All Tickets",
+				name: "My Tickets",
 				component: AllUserTickets,
 			},
 			{
 				path: "myProduct",
-				name: "manage/register product",
-				component: Product,
+				name: "manage product",
+				component: MyProduct,
 			},
 			{
 				path: "editProfile",
@@ -61,10 +62,10 @@ const routes = [
 				name: "ticket",
 				component: Ticket,
 			},
-			{ path: "/product/:id", name: "Business Product", component: BusinessProduct },
+			{ path: "/product/:id", name: "Business Product", component: UniqueProductPage },
 		],
 	},
-	{ path: "*", component: NotFound },
+	{ path: "*", component: PageNotFound },
 ];
 
 export default routes;
