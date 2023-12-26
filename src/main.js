@@ -11,9 +11,10 @@ import store from "@/Plugins/store";
 import "@/Plugins/axios.js";
 import "@/Plugins/vue-toast.js";
 
-//Components
+//Customed Components
 import "@/Plugins/card.js";
 import "@/Plugins/customed-input.js";
+import "@/Plugins/customed-text-area.js";
 
 new Vue({
 	router,

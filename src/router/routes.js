@@ -3,10 +3,13 @@ const Dashboard = () => import("@/pages/Dashboard.vue");
 
 //User
 const UserProfile = () => import("@/pages/UserProfile/User.vue");
-const EditUser = () => import("@/pages/UserProfile/EditUser.vue")
+const EditUser = () => import("@/pages/UserProfile/EditUser.vue");
 
-//Business
-const Product = () => import("@/pages/Product.vue")
+//MyBusinessProduct
+const Product = () => import("@/pages/MyProduct.vue");
+
+//OtherBusinessProduct
+const BusinessProduct = () => import("@/pages/BusinessProduct");
 
 //Auth
 const Login = () => import("@/pages/Auth/Login.vue");
@@ -27,7 +30,8 @@ const routes = [
 	{
 		path: "/dashboard",
 		component: DashboardLayout,
-		children: [{
+		children: [
+			{
 				path: "/",
 				name: "Dashboard",
 				component: Dashboard,
@@ -57,7 +61,8 @@ const routes = [
 				name: "ticket",
 				component: Ticket,
 			},
-		]
+			{ path: "/product/:id", name: "Business Product", component: BusinessProduct },
+		],
 	},
 	{ path: "*", component: NotFound },
 ];
