@@ -30,7 +30,7 @@ export default {
         return {
             sidebarItems: [{
                     icon: "fa-user",
-                    href: "/dashboard/userProfile",
+                    href: "/dashboard/userInfo",
                     innerText: "My Profile",
                 },
                 {
