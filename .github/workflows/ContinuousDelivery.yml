@@ -1,0 +1,53 @@
+name: Build image & Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  # Maybe add a build job here to bulid and test the code before building the docker file! 
+
+  docker:
+      # needs: build
+      name: Build and Push Docker Image
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v3
+      
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: ticketmastergang/ticketmaster:frontend
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: .
+          file: ./Dockerfile.prod
+          push: true
+          tags: ticketmastergang/ticketmaster:frontend
+          labels: ${{ steps.meta.outputs.labels }}
+
+  deploy:
+        needs: docker
+        name: Deploy on cloud server
+        runs-on: self-hosted
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v2
+
+          - name: Deploy
+            run: |
+              docker-compose pull
+              docker-compose up -d
+
