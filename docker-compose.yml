@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: ticket/ticket-master:latest
+    image: ticketmastergang/ticketmaster:frontend
     env_file: "./.env"
     ports:
       - 3300:4173
