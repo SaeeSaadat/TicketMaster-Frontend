@@ -20,7 +20,7 @@ const Ticket = () => import("@/pages/Tickets/Ticket.vue");
 const AllUserTickets = () => import("@/pages/Tickets/AllUserTickets.vue");
 
 //Layout & Components
-const NotFound = () => import("@/components/NotFoundPage.vue");
+const NotFound = () => import("@/pages/NotFoundPage.vue");
 const DashboardLayout = () => import("@/Layout/FullPage.vue");
 
 const routes = [
