@@ -1,12 +1,10 @@
 <template>
     <div class="card">
         <div class="card-header d-flex justify-content-between">
-            <h1 class="title mt-4 ml-4">All Tickets List</h1>
-            <div class="form-group d-flex">
+            <div class="form-group d-flex mt-4">
                 <input type="text" class="form-control my-auto mr-3 input-xl border-primary" />
                 <button class="btn my-auto mr-5 w-50">Search ...</button>
             </div>
-            <button class="btn btn-danger black my-auto">Add New Ticket</button>
         </div>
         <div class="card-body">
             <div class="row">
