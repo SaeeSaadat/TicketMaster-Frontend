@@ -10,56 +10,47 @@
                     consectetur adipisicing elit. Amet quo a provident, iure ducimus molestiae, reprehenderit voluptatibus dignissimos quam nam, ullam laudantium dolorem fugit. Minus, dolore dicta. Nihil, quia voluptatum! Lorem ipsum dolor, sit amet consectetur
                     adipisicing elit. Id ducimus culpa corporis necessitatibus incidunt, obcaecati ad numquam ut animi totam consequatur nemo est, atque mollitia ipsum minima dolore? Cupiditate, enim!
                 </card>
-                <card style="width:30%; height: 400px; overflow-y: auto;">
-                    <p class="mb-4">ChatBox</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                    <p class="text-left text-primary">Hello What Can i do for you?</p>
-                    <p class="text-right text-info">Hello I want to check my connection.</p>
-                </card>
+                <div class="dflex flex-column" style="width:30%;">
+                    <card style="height: 400px; overflow-y: auto;">
+                        <p class="mb-4">ChatBox</p>
+                        <p class="text-left text-primary">Hello What Can i do for you?</p>
+                        <p class="text-right text-info">Hello I want to check my connection.</p>
+                        <p class="text-left text-primary">Hello What Can i do for you?</p>
+                        <p class="text-right text-info">Hello I want to check my connection.</p>
+                        <p class="text-left text-primary">Hello What Can i do for you?</p>
+                        <p class="text-right text-info">Hello I want to check my connection.</p>
+                        <p class="text-left text-primary">Hello What Can i do for you?</p>
+                        <p class="text-right text-info">Hello I want to check my connection.</p>
+                        <p class="text-left text-primary">Hello What Can i do for you?</p>
+                        <p class="text-right text-info">Hello I want to check my connection.</p>
+                        <p class="text-left text-primary">Hello What Can i do for you?</p>
+                        <p class="text-right text-info">Hello I want to check my connection.</p>
+                        <p class="text-left text-primary">Hello What Can i do for you?</p>
+                        <p class="text-right text-info">Hello I want to check my connection.</p>
+                    </card>
+                    <div class="dflex row justify-content-center">
+                        <customed-textarea customedTextareaClass="form-control" class="mr-3" v-model="text" placeholder="Enter Your Text Here ..."/>
+                        <button @click="sendText" class="btn btn-primary h-50 my-auto"><i class="fa fa-send"></i></button>
+                    </div>
+    
+                </div>
             </div>
         </card>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            text: ""
+        }
+    },
+    methods: {
+        sendText() {
+            //Todo: write send text to backend
+            text = ""
+        }
+    }
+}
+</script>
