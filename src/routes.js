@@ -1,7 +1,5 @@
-//Layout & Components
+//Layout & Index
 const ProjectLayout = () => import("@/Layout/FullPage.vue");
-
-//MainPage(Index)
 const ProductLink = () => import("@/pages/ProductLink.vue");
 
 //Authentication
