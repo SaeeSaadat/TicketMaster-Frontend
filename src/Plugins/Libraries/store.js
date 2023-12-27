@@ -7,6 +7,9 @@ export default new Vuex.Store({
 	state: {
 		personType: "",
 		personId: "",
-		personUsername:""
+		personUsername:"",
+		myProductTitle:"",
+		myProductDescription:"",
+		myProductPicture:""
 	},
 });
