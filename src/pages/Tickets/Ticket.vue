@@ -11,7 +11,7 @@
                     adipisicing elit. Id ducimus culpa corporis necessitatibus incidunt, obcaecati ad numquam ut animi totam consequatur nemo est, atque mollitia ipsum minima dolore? Cupiditate, enim!
                 </card>
                 <div class="dflex flex-column" style="width:30%;">
-                    <card style="height: 400px; overflow-y: auto;">
+                    <card style="height: 380px; overflow-y: auto;">
                         <p class="mb-4">ChatBox</p>
                         <p class="text-left text-primary">Hello What Can i do for you?</p>
                         <p class="text-right text-info">Hello I want to check my connection.</p>
