@@ -1,5 +1,6 @@
 <template>
     <div v-if="this.$store.state.personType=='admin'">
+    <div>
         <card type="user" class="mx-auto mt-4 mb-5" style="width:45%;">
             <div class="author mb-5 w-100">
                 <img class="mb-5" src="https://fastly.picsum.photos/id/450/200/300.jpg?hmac=EAnz3Z3i5qXfaz54l0aegp_-5oN4HTwiZG828ZGD7GM" alt="..." />
@@ -16,8 +17,8 @@
 </template>
 
 <script>
-import RegisterProduct from "./RegisterProduct.vue";
-import AllProductTickets from "@/pages/Product/AllProductTickets.vue";
+import RegisterProduct from "@/pages/ProductProfile/RegisterProduct.vue";
+import AllProductTickets from "@/pages/Tickets/AllProductTickets.vue";
 
 export default {
     components: {
