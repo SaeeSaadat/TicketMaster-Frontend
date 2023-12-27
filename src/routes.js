@@ -16,7 +16,7 @@ const EditUser = () => import("@/pages/UserProfile/EditUser.vue");
 
 //Tickets
 const Ticket = () => import("@/pages/Tickets/Ticket.vue");
-const AllUserTickets = () => import("@/pages/Tickets/AllUserTickets.vue");
+const AllTickets = () => import("@/pages/Tickets/AllTickets.vue");
 
 //404 Page
 const PageNotFound = () => import("@/pages/404/NotFoundPage.vue");
@@ -43,7 +43,7 @@ const routes = [
 			{
 				path: "myTickets",
 				name: "My Tickets",
-				component: AllUserTickets,
+				component: AllTickets,
 			},
 			{
 				path: "myProduct",
