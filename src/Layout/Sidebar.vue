@@ -7,12 +7,12 @@
                 <span v-else-if="this.$store.state.personType == 'user'" class="my-auto ml-3">Register Product</span>
             </div>
         </a>
-        <a v-for="(value, index) in sidebarItems" class="btn btn-simple border-0 w-100 text-left" :href="value.href">
+        <router-link v-for="(value, index) in sidebarItems" class="btn btn-simple border-0 w-100 text-left" :to="value.href">
             <div class="d-inline-flex">
                 <i class="my-auto text-white fa" :class="value.icon"></i>
                 <span class="h4 text-white ml-2 my-auto">{{ value.innerText }}</span>
             </div>
-        </a>
+        </router-link>
         <p class="mb-4"></p>
         <button @click="Logout" class="btn btn-simple mt-5 w-100">
             <div class="d-inline-flex">

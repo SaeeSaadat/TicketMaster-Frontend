@@ -3,13 +3,20 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
 	state: {
-		personType: "",
-		personId: "",
-		personUsername:"",
-		myProductTitle:"",
-		myProductDescription:"",
-		myProductPicture:""
+		role: "",
+		userId: "",
+		username: "",
+		myProductTitle: "",
+		myProductDescription: "",
+		myProductPicture: "",
+	},
+	mutations: {
+		setRole(state, value) {
+			state.role = value;
+		},
 	},
 });
+
+export default store;

@@ -9,7 +9,7 @@
             <div class="row mb-5">
                 <customed-input type="password" customedLabelClass="text-white" customedDivClass="col-12" label="Password :" placeholder="Please Enter Your Password ..." v-model="password" />
             </div>
-            <button @click="Login" :disabled="!username||!password" class="btn btn-primary mr-5">
+            <button @click="Login" :disabled="!username || !password" class="btn btn-primary mr-5">
                     <div v-if="!loading">Login</div>
                     <div v-else><i class="fa fa-spinner fa-spin"></i>Loading</div>
                   </button>
@@ -40,19 +40,19 @@ export default {
                 })
                 .then((res) => {
                     this.loading = false;
-                    
+
                     StoreCurrentUserData(
                         res.data.userId,
                         res.data.username,
                         res.data.role,
-                        this.$store.state
+                        this.$store
                     );
 
                     this.$toast.success("Login Successfully!");
 
                     setTimeout(() => {
                         this.$router.push("/dashboard");
-                    }, 1000);
+                    }, 500);
                 })
                 .catch((error) => {
                     this.loading = false
