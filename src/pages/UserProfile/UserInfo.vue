@@ -5,6 +5,6 @@
             <h3 class="title mb-3">Testing the Username</h3>
             <span>(admin/user)</span>
         </div>
-        <a href="/dashboard/editProfile" class="btn btn-primary w-100">Edit</a>
+        <router-link to="/dashboard/editProfile" class="btn btn-primary w-100">Edit</router-link>
     </card>
 </template>

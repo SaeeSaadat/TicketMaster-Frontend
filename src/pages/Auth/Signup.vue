@@ -16,7 +16,7 @@
                     <div v-if="!loading">SignUp</div>
                     <div v-else><i class="fa fa-spinner fa-spin"></i>Loading</div>
                 </button>
-            <a href="/login">Already have an Account!</a>
+            <router-link to="/login">Already have an Account!</router-link>
         </card>
     </div>
 </template>

@@ -16,7 +16,7 @@
                     <span>DueDate: 1402/09/26</span>
                 </div>
                 <p>Username</p>
-                <a :href="'/dashboard/ticket'" class="btn btn-primary mt-3">Show</a>
+                <router-link :to="'/dashboard/ticket'" class="btn btn-primary mt-3">Show</router-link>
             </div>
         </div>
     </div>

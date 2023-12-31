@@ -13,7 +13,7 @@
                 </div>
                 <i title="Lamp" class="text-white fa fa-bug mt-3"></i>
                 <p></p>
-                <a href="/dashboard/ticket" class="btn btn-primary mt-3">Show</a>
+                <router-link to="/dashboard/ticket" class="btn btn-primary mt-3">Show</router-link>
             </div>
         </div>
     </div>

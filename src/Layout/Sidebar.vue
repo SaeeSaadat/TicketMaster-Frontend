@@ -1,12 +1,12 @@
 <template>
     <div class="col sidebar bg-white" data="vue">
-        <a href="/dashboard/myProduct" class="btn btn-simple mt-5 mb-4 w-100">
+        <router-link to="/dashboard/myProduct" class="btn btn-simple mt-5 mb-4 w-100">
             <div class="d-inline-flex">
                 <i class="fa fa-cart-shopping my-auto"></i>
                 <span v-if="this.$store.state.personType == 'admin'" class="my-auto ml-3">Manage Product</span>
                 <span v-else-if="this.$store.state.personType == 'user'" class="my-auto ml-3">Register Product</span>
             </div>
-        </a>
+        </router-link>
         <router-link v-for="(value, index) in sidebarItems" class="btn btn-simple border-0 w-100 text-left" :to="value.href">
             <div class="d-inline-flex">
                 <i class="my-auto text-white fa" :class="value.icon"></i>
