@@ -1,5 +1,8 @@
 <template>
-    <div v-if="this.$store.state.personType=='admin'">
+    <div v-if="this.$store.state.personType=='USER'">
+        <register-product/>
+    </div>
+    <div v-else>
         <card type="user" class="mx-auto mt-4 mb-5" style="width:45%;">
             <div class="author mb-5 w-100">
                 <img class="mb-5" src="https://fastly.picsum.photos/id/450/200/300.jpg?hmac=EAnz3Z3i5qXfaz54l0aegp_-5oN4HTwiZG828ZGD7GM" alt="..." />
@@ -9,9 +12,6 @@
             <router-link to="#" class="btn btn-primary w-100">Edit</router-link>
         </card>
         <all-tickets />
-    </div>
-    <div v-else-if="this.$store.state.personType=='user'">
-        <register-product/>
     </div>
 </template>
 

@@ -16,6 +16,12 @@ const store = new Vuex.Store({
 		setRole(state, value) {
 			state.role = value;
 		},
+		setUserId(state, value) {
+			state.userId = value;
+		},
+		setUsername(state, value) {
+			state.username = value;
+		},
 	},
 });
 

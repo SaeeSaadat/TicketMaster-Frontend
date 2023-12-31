@@ -40,7 +40,7 @@ export default {
                 })
                 .then((res) => {
                     this.loading = false;
-
+                    console.log(res.data);
                     StoreCurrentUserData(
                         res.data.userId,
                         res.data.username,
