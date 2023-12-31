@@ -40,11 +40,11 @@ export default {
                 })
                 .then((res) => {
                     this.loading = false;
-
+                    
                     StoreCurrentUserData(
-                        res.data.id,
+                        res.data.userId,
                         res.data.username,
-                        res.data.type,
+                        res.data.role,
                         this.$store.state
                     );
 
