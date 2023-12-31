@@ -1,5 +1,7 @@
 services:
   frontend:
     image: ticketmastergang/ticketmaster:frontend
+    environment:
+        - S3_URL: ${S3_URL}
     ports:
       - 3300:4173
