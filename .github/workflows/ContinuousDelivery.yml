@@ -43,9 +43,9 @@ jobs:
         steps:
           - name: Checkout code
             uses: actions/checkout@v2
-        env:
-          S3_URL: ${{ vars.S3_URL }}
           - name: Deploy
+            env:
+              S3_URL: ${{ vars.S3_URL }}
             run: |
               docker-compose pull
               docker-compose up -d
