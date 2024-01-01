@@ -12,7 +12,7 @@
             <button @click="Login" :disabled="!username || !password" class="btn btn-primary mr-5">
                     <div v-if="!loading">Login</div>
                     <div v-else><i class="fa fa-spinner fa-spin"></i>Loading</div>
-                  </button>
+                </button>
             <router-link to="/signup">Create New Account</router-link>
         </card>
     </div>
@@ -40,12 +40,12 @@ export default {
                 })
                 .then((res) => {
                     this.loading = false;
-                    console.log(res.data);
-                    StoreCurrentUserData(
+
+                    SaveCurrentUserDataInLocalStorage(
                         res.data.userId,
                         res.data.username,
                         res.data.role,
-                        this.$store
+                        res.data.productId,
                     );
 
                     this.$toast.success("Login Successfully!");

@@ -3,7 +3,7 @@
         <router-link to="/dashboard/myProduct" class="btn btn-simple mt-5 mb-4 w-100">
             <div class="d-inline-flex">
                 <i class="fa fa-cart-shopping my-auto"></i>
-                <span v-if="this.$store.state.personType == 'USER'" class="my-auto ml-3">Register Product</span>
+                <span v-if="!localStorage.getItem("role")" class="my-auto ml-3">Register Product</span>
                 <span v-else class="my-auto ml-3">Manage Product</span>
             </div>
         </router-link>

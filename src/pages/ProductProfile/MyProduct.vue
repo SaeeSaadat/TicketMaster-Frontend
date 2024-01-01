@@ -1,5 +1,5 @@
 <template>
-    <div v-if="this.$store.state.personType=='USER'">
+    <div v-if="!localStorage.getItem("role")">
         <register-product/>
     </div>
     <div v-else>

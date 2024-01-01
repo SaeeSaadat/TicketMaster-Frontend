@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="card-body">
-            <user-tickets v-if="this.$store.state.personType == 'USER'" :tickets="tickets" />
+            <user-tickets v-if="!localStorage.getItem("role")" :tickets="tickets" />
             <product-tickets v-else :tickets="tickets" />
         </div>
     </div>

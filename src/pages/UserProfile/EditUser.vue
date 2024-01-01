@@ -1,10 +1,8 @@
 <template>
     <card type="user" class="mx-auto mt-4 w-50">
         <div class="row mb-3">
-            <customed-input customedDivClass="col-12 w-50" label="User Id" placeholder="Company" :disabled="true" />
-        </div>
-        <div class="row mb-3">
-            <customed-input customedDivClass="col-6" label="Username" placeholder="Please Enter Your New Username ..." /> 
+            <customed-input customedDivClass="col-6 w-50" label="User Id" :placeholder="localStorage.getItem("userId")" :disabled="true" />
+            <customed-input customedDivClass="col-6" label="Username" :placeholder="localStorage.getItem("username")" /> 
         </div>
         <div class="row mb-5">
             <customed-input customedDivClass="col-6" label="Password" placeholder="Please Enter Your New Password ..." />

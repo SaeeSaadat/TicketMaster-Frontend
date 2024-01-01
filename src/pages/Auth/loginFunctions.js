@@ -1,7 +1,8 @@
-export function StoreCurrentUserData(userId, username, role, store) {
-	store.commit("setRole", role);
-	store.commit("setUserId", userId);
-	store.commit("setUsername", username);
+export function SaveCurrentUserDataInLocalStorage(userId, username, role, productId) {
+	localstorage.setItem("setRole", role);
+	localstorage.setItem("setUserId", userId);
+	localstorage.setItem("setUsername", username);
+	localstorage.setItem("setProductId", productId);
 }
 export function HandleLoginError(error) {
 	return "Something Went Wrong ...";

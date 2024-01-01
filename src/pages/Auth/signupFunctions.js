@@ -1,2 +1,6 @@
-export function validatePassword(password) {}
-export function HandleSignupError(error) {}
+export function validatePassword(password) {
+    return true
+}
+export function HandleSignupError(error) {
+    return false
+}

@@ -37,7 +37,7 @@ const routes = [
 			},
 			{
 				path: "userInfo",
-				name: "myProfile",
+				name: "My Profile",
 				component: UserInfo,
 			},
 			{
@@ -47,7 +47,7 @@ const routes = [
 			},
 			{
 				path: "myProduct",
-				name: "manage product",
+				name: "My Product",
 				component: MyProduct,
 			},
 			{
