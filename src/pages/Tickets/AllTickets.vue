@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="card-body">
-            <user-tickets v-if="!localStorage.getItem("role")" :tickets="tickets" />
+            <user-tickets v-if="!role" :tickets="tickets" />
             <product-tickets v-else :tickets="tickets" />
         </div>
     </div>
@@ -28,6 +28,12 @@ export default {
                 title: "testing the title",
             }],
         };
+    },
+    computed:{
+        role(){
+            const role = localStorage.getItem('role')
+            return role == 'null' ? '' : role;
+        }
     }
 };
 </script>

@@ -3,7 +3,7 @@
         <router-link to="/dashboard/myProduct" class="btn btn-simple mt-5 mb-4 w-100">
             <div class="d-inline-flex">
                 <i class="fa fa-cart-shopping my-auto"></i>
-                <span v-if="!localStorage.getItem("role")" class="my-auto ml-3">Register Product</span>
+                <span v-if="!role" class="my-auto ml-3">Register Product</span>
                 <span v-else class="my-auto ml-3">Manage Product</span>
             </div>
         </router-link>
@@ -15,11 +15,11 @@
         </router-link>
         <p class="mb-4"></p>
         <button @click="Logout" class="btn btn-simple mt-5 w-100">
-            <div class="d-inline-flex">
-            <i class="fa fa-power-off my-auto"></i>
-            <span class="my-auto ml-2">Logout</span>
-            </div>
-        </button>
+                <div class="d-inline-flex">
+                <i class="fa fa-power-off my-auto"></i>
+                <span class="my-auto ml-2">Logout</span>
+                </div>
+            </button>
     </div>
 </template>
 
@@ -56,5 +56,11 @@ export default {
             })
         },
     },
+    computed: {
+        role() {
+            const role = localStorage.getItem('role')
+            return role == 'null' ? '' : role;
+        }
+    }
 };
 </script>

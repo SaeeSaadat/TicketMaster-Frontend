@@ -12,7 +12,7 @@
             <div class="row mb-5">
                 <customed-input customedLabelClass="text-white" customedDivClass="col-12" label="reEnter Password :" placeholder="Please reEnter Your Password ..." v-model="rePassword" type="password" />
             </div>
-            <button @click="Signup" :disabled="!username||!password||!rePassword" class="btn btn-primary mr-5">
+            <button @click="Signup" :disabled="!username||!password||!rePassword" class="btn btn-primary mr-3">
                     <div v-if="!loading">SignUp</div>
                     <div v-else><i class="fa fa-spinner fa-spin"></i>Loading</div>
                 </button>

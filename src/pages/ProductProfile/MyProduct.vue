@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!localStorage.getItem("role")">
+    <div v-if="!role">
         <register-product/>
     </div>
     <div v-else>
@@ -24,5 +24,11 @@ export default {
         RegisterProduct,
         AllTickets
     },
+    computed:{
+        role(){
+            const role = localStorage.getItem('role')
+            return role == 'null' ? '' : role;
+        }
+    }
 };
 </script>
