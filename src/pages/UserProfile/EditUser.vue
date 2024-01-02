@@ -19,7 +19,8 @@
 export default {
     computed: {
         userId: () => {
-            return localStorage.getItem("setUserId");
+            console.log();
+            return localStorage.getItem("userId");
         },
         username: () => {
             return localStorage.getItem("username");
