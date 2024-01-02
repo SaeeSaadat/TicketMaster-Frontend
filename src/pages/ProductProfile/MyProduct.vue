@@ -9,7 +9,7 @@
                 <h3 class="title mb-3">Testing the Username</h3>
                 <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil illum consequatur, possimus, numquam, obcaecati cupiditate corrupti mollitia molestias velit iusto sequi incidunt eum suscipit architecto laborum voluptatum odio labore! In!</p>
             </div>
-            <router-link to="#" class="btn btn-primary w-100">Edit</router-link>
+            <router-link to="dashboard/editProduct" class="btn btn-primary w-100">Edit</router-link>
         </card>
         <all-tickets />
     </div>

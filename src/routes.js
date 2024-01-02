@@ -9,6 +9,7 @@ const Signup = () => import("@/pages/Auth/Signup.vue");
 //Product
 const MyProduct = () => import("@/pages/ProductProfile/MyProduct.vue");
 const UniqueProductPage = () => import("@/pages/ProductProfile/UniqueProductPage.vue");
+const EditProduct = () => import("@/pages/ProductProfile/EditProduct.vue");
 
 //User
 const UserInfo = () => import("@/pages/UserProfile/UserInfo.vue");
@@ -59,6 +60,11 @@ const routes = [
 				path: "ticket",
 				name: "ticket",
 				component: Ticket,
+			},
+			{
+				path: "editProduct",
+				name: "Edit Product",
+				component: EditProduct,
 			},
 			{ path: "/product/:id/view", name: "Business Product", component: UniqueProductPage },
 		],
