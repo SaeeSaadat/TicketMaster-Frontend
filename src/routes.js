@@ -60,7 +60,7 @@ const routes = [
 				name: "ticket",
 				component: Ticket,
 			},
-			{ path: "/product/:id", name: "Business Product", component: UniqueProductPage },
+			{ path: "/product/:id/view", name: "Business Product", component: UniqueProductPage },
 		],
 	},
 	{ path: "*", component: PageNotFound },
