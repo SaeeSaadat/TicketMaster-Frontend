@@ -7,23 +7,40 @@
             </div>
         </div>
         <div class="card-body">
-            <user-tickets v-if="!role" :tickets="tickets" />
-            <product-tickets v-else :tickets="tickets" />
+            <user-tickets :tickets="tickets" />
         </div>
     </div>
 </template>
 
 <script>
 import UserTickets from "@/components/UserTickets.vue";
-import ProductTickets from "@/components/ProductTickets.vue";
 export default {
     components: {
         UserTickets,
-        ProductTickets,
     },
     data() {
         return {
             tickets: [{
+                id: 1,
+                title: "testing the title",
+            },
+            {
+                id: 1,
+                title: "testing the title",
+            },
+            {
+                id: 1,
+                title: "testing the title",
+            },
+            {
+                id: 1,
+                title: "testing the title",
+            },
+            {
+                id: 1,
+                title: "testing the title",
+            },
+            {
                 id: 1,
                 title: "testing the title",
             }],

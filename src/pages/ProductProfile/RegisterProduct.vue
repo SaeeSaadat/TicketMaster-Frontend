@@ -5,7 +5,8 @@
             <div class="row mb-3">
                 <customed-input class="mx-auto" customedDivClass="col-9" placeholder="Please Enter Your business Name ..." v-model="businessName" />
             </div>
-            <customed-textarea customedTextareaClass="form-control" placeholder="Please Write a Brief Description of Your Business ..." v-model="businessDescription" /> A place TO Upload Image
+            <customed-textarea customedTextareaClass="form-control" placeholder="Please Write a Brief Description of Your Business ..." v-model="businessDescription" />
+            <p>A place To Upload Image</p>
         </div>
         <button @click="registerNewProduct" class="btn btn-primary w-100">Register Product</button>
     </card>
@@ -21,7 +22,7 @@ export default {
     },
     methods: {
         registerNewProduct() {
-
+            
         }
     }
 }

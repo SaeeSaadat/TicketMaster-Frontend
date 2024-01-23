@@ -8,7 +8,7 @@
                     <span>Created: 1402/09/26</span>
                 </div>
                 <div class="dflex">
-                    <i class="fa fa-calendar"></i>&nbsp;
+                    <i class="fa fa-window-close"></i>&nbsp;
                     <span>DueDate: 1402/09/26</span>
                 </div>
                 <i title="Lamp" class="text-white fa fa-bug mt-3"></i>

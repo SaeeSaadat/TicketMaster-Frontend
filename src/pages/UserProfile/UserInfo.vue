@@ -18,7 +18,6 @@ export default {
         role() {
             const role = localStorage.getItem("role")
             return role == 'null' ? '' : role
-
         }
     }
 }

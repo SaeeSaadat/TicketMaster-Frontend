@@ -12,7 +12,7 @@
                     <span>1402/09/26    14:25</span>
                 </div>
                 <div class="dflex">
-                    <i class="fa fa-calendar"></i>&nbsp;
+                    <i class="fa fa-window-close"></i>&nbsp;
                     <span>DueDate: 1402/09/26</span>
                 </div>
                 <p>Username</p>
