@@ -5,13 +5,35 @@
             <customed-input customedDivClass="col-6" label="New Name" placeholder="" />
         </div>
         <customed-textarea customedTextareaClass="form-control col-12" placeholder="Please Write a Brief Description of Your Business ..." />
-        <p>A place to Upload Picture</p>
+        <div>
+            <button class="btn btn-info" @click="triggerPicturePickerInput">Upload profile picture</button>
+            <input type="file" class="d-none" ref="fileInput" accept="image/*" @change="handlePickedFile" />
+        </div>
         <button class="btn btn-primary">Save</button>
     </card>
 </template>
 
 <script>
 export default {
-    
+    data(){
+        return{
+            imageUrl:""
+        }
+    },
+    methods: {
+        triggerPicturePickerInput() {
+            this.$refs.fileInput.click();
+        },
+        handlePickedFile(event) {
+            const file = event.target.files[0];
+            const fileReader = new FileReader();
+
+            fileReader.addEventListener('load', () => {
+                this.imageUrl = fileReader.result;
+            })
+
+            fileReader.readAsDataURL(file);
+        }
+    }
 }
 </script>
