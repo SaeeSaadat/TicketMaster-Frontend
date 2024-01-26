@@ -6,7 +6,7 @@
         </div>
         <customed-textarea customedTextareaClass="form-control col-12" placeholder="Please Write a Brief Description of Your Business ..." />
         <div>
-            <button class="btn btn-info" @click="triggerPicturePickerInput">Upload profile picture</button>
+            <button class="btn" @click="triggerPicturePickerInput">upload new product picture</button>
             <input type="file" class="d-none" ref="fileInput" accept="image/*" @change="handlePickedFile" />
         </div>
         <button class="btn btn-primary">Save</button>

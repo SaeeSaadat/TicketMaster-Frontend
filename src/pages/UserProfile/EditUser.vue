@@ -1,22 +1,55 @@
 <template>
     <card type="user" class="mx-auto mt-4 w-50">
-        <div class="row mb-4">
-            <customed-input customedDivClass="col-6 w-50" label="User Id" :placeholder="userId" :disabled="true" />
-            <customed-input customedDivClass="col-6" label="New Username" :placeholder="username" />
+        <div class="dflex gap-3">
+            <div class="row mb-5">
+                <customed-input customedDivClass="col-6" label="User Id" :placeholder="userId" :disabled="true" />
+                <button class="btn mx-auto mb-0" @click="triggerPicturePickerInput">upload new profile picture</button>
+                <input type="file" class="d-none" ref="fileInput" accept="image/*" @change="handlePickedFile" />
+            </div>
+    
+            <div class="column mb-5">
+                <customed-input type="password" customedDivClass="mb-3" label="Old Password" placeholder="Please Enter Your Old Password ..." v-model="oldPassword" />
+                <customed-input type="password" customedDivClass="mb-3" label="New Password" placeholder="Please Enter Your New Password ..." v-model="newPassword" />
+                <customed-input type="password" label="Confirm New Password" placeholder="Please Confirm Your New Password ..." v-model="newRePassword" />
+            </div>
         </div>
-        <div class="row mb-4">
-            <customed-input customedDivClass="col-12" label="Old Password" placeholder="Please Enter Your Old Password ..." />
-        </div>
-        <div class="row mb-5">
-            <customed-input customedDivClass="col-6" label="New Password" placeholder="Please Enter Your New Password ..." />
-            <customed-input customedDivClass="col-6" label="Confirm New Password" placeholder="Please Re-Enter Your New Password ..." />
-        </div>
-        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary" @click="saveEdittedData">Save</button>
     </card>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
+    data() {
+        return {
+            oldPassword: "",
+            newPassword: "",
+            newRePassword: "",
+        }
+    },
+    methods: {
+        saveEdittedData() {
+            axios.put("/profile", {
+                "profilePicture": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                "oldPassword": this.oldPassword,
+                "newPassword": this.newPassword,
+                "newPasswordConfirmation": this.newRePassword
+            })
+        },
+        triggerPicturePickerInput() {
+            this.$refs.fileInput.click();
+        },
+        handlePickedFile(event) {
+            const file = event.target.files[0];
+            const fileReader = new FileReader();
+
+            fileReader.addEventListener('load', () => {
+                this.imageUrl = fileReader.result;
+            })
+
+            fileReader.readAsDataURL(file);
+        }
+    },
     computed: {
         userId: () => {
             console.log();
@@ -26,5 +59,12 @@ export default {
             return localStorage.getItem("username");
         },
     },
+    mounted(){
+        axios.get("/profile").then((e)=>{
+            console.log(e.data);
+        }).catch((e)=>{
+            console.log(e);
+        })
+    }
 };
 </script>

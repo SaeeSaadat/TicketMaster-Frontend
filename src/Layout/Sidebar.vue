@@ -7,7 +7,7 @@
                 <span v-else class="my-auto ml-3">Manage Product</span>
             </div>
         </router-link>
-        <router-link v-for="(value, index) in sidebarItems" class="btn btn-simple border-0 w-100 text-left" :to="value.href">
+        <router-link v-for="(value, index) in sidebarItems" :key="index" class="btn btn-simple border-0 w-100 text-left" :to="value.href">
             <div class="d-inline-flex">
                 <i class="my-auto text-white fa" :class="value.icon"></i>
                 <span class="h4 text-white ml-2 my-auto">{{ value.innerText }}</span>
