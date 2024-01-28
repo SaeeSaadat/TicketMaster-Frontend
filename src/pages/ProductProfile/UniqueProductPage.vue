@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { SaveThisProductDataInLocalStorage } from "./UniqueProductPageFunctions"
+import { SaveThisProductDataInLocalStorage } from "@/functions/Product/UniqueProductPageFunctions"
 export default {
     mounted() {
         console.log(this.$route.params.id);

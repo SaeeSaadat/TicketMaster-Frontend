@@ -19,7 +19,7 @@
 import RegisterProduct from "@/pages/ProductProfile/RegisterProduct.vue";
 import AllTickets from "@/pages/Tickets/AllTickets.vue";
 
-import { SaveMyProductDataInLocalStorage } from "./MyProductFunctions"
+import { SaveMyProductDataInLocalStorage } from "@/functions/Product/MyProductFunctions"
 
 export default {
     components: {

@@ -23,7 +23,7 @@
 
 <script>
 import axios from "axios";
-import { validatePassword, HandleSignupError } from "./signupFunctions.js"
+import { validatePassword, HandleSignupError } from "@/functions/Auth/signupFunctions.js"
 export default {
     data() {
         return {

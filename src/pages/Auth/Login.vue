@@ -21,7 +21,7 @@
 
 <script>
 import axios from "axios";
-import { SaveCurrentUserDataInLocalStorage, HandleLoginError } from "./loginFunctions.js";
+import { SaveCurrentUserDataInLocalStorage, HandleLoginError } from "@/functions/Auth/loginFunctions.js";
 export default {
     data() {
         return {
