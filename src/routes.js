@@ -68,7 +68,7 @@ const routes = [
 				component: EditProduct,
 			},
 			{ path: "/product/:id/view", name: "Business Product", component: UniqueProductPage },
-			{ path: "/product/:id/submitTicket/:ticketType", name: "Submit New Ticket", component: CreateTicket }
+			{ path: "/submitTicket/:ticketType", name: "Submit New Ticket", component: CreateTicket }
 		],
 	},
 	{ path: "*", component: PageNotFound },

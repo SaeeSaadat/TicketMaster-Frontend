@@ -4,5 +4,5 @@ import "vue-toast-notification/dist/theme-bootstrap.css";
 
 Vue.use(ToastPlugin, {
 	position: "top-left",
-	duration: 1000,
+	duration: 2000,
 });
