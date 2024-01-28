@@ -33,14 +33,14 @@
 <script>
 import { SaveThisProductDataInLocalStorage } from "@/functions/Product/UniqueProductPageFunctions";
 export default {
-	data(){
-		return{
-			thisProductId:this.$router.params.id
-		}
+	data() {
+		return {
+			thisProductId: this.$router.params.id,
+		};
 	},
 	beforeMount() {
-        //TODO: getProductInformation
-    },
+		//TODO: getProductInformation
+	},
 	mounted() {
 		SaveThisProductDataInLocalStorage(
 			this.thisProductId,

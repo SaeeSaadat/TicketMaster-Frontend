@@ -7,7 +7,7 @@
 				customedDivClass="col-8 mb-4 mx-auto"
 				customedLabelClass="text-white"
 				label="Ticket Title:"
-				placeholder="Pretty Please enter the title of ticket you want to submit ..."
+				placeholder="Please enter the title of ticket you want to submit ..."
 				v-model="ticketTitle"
 			/>
 
