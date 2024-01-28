@@ -11,7 +11,7 @@
             </div>
             <button @click="Login" :disabled="!username || !password" class="btn btn-primary mr-5">
                     <div v-if="!loading">Login</div>
-                    <div v-else><i class="fa fa-spinner fa-spin"></i>Loading</div>
+                    <div v-else><i class="fa fa-spinner fa-spin"></i>&nbsp;Loading</div>
                 </button>
             <router-link to="/signup">Create New Account</router-link>
         </card>
