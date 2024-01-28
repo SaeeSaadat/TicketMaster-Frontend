@@ -6,9 +6,9 @@
                 <h3 class="title mb-3">{{thisProductTitle}}</h3>
                 <p class="description">{{thisProductDescription}}</p>
                 <div class="row justify-content-center mt-4">
-                    <button class="btn mr-4"><i class="fa fa-info"></i></button>
-                    <button class="btn mr-4"><i class="fa fa-question"></i></button>
-                    <button class="btn"><i class="fa fa-bug"></i></button>
+                    <router-link :to="`/product/${this.$route.params.id}/submitTicket/information`" class="btn btn-primary mr-4" title="information"><i class="fa fa-info"></i></router-link>
+                    <router-link :to="`/product/${this.$route.params.id}/submitTicket/question`" class="btn mr-4" title="question"><i class="fa fa-question"></i></router-link>
+                    <router-link :to="`/product/${this.$route.params.id}/submitTicket/bug`" class="btn btn-danger" title="bug"><i class="fa fa-bug"></i></router-link>
                 </div>
             </div>
         </card>

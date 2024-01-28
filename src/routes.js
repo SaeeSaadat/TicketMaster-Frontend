@@ -18,6 +18,7 @@ const EditUser = () => import("@/pages/UserProfile/EditUser.vue");
 //Tickets
 const Ticket = () => import("@/pages/Tickets/Ticket.vue");
 const AllTickets = () => import("@/pages/Tickets/AllTickets.vue");
+const CreateTicket = () => import("@/pages/Tickets/CreateTicket.vue")
 
 //404 Page
 const PageNotFound = () => import("@/pages/404/NotFoundPage.vue");
@@ -67,6 +68,7 @@ const routes = [
 				component: EditProduct,
 			},
 			{ path: "/product/:id/view", name: "Business Product", component: UniqueProductPage },
+			{ path: "/product/:id/submitTicket/:ticketType", name: "Submit New Ticket", component: CreateTicket }
 		],
 	},
 	{ path: "*", component: PageNotFound },
