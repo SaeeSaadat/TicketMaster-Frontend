@@ -63,7 +63,7 @@ export default {
         productDescription() {
             return localStorage.getItem("currentProductDescription")
         }
-    }
+    },
     methods: {
         triggerPicturePickerInput() {
             this.$refs.fileInput.click();
