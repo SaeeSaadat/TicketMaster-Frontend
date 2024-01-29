@@ -1,6 +1,12 @@
 import axios from "axios";
 
-export default function HandleLogin(username, password, loading) {
+export default function HandleLogin(
+	username,
+	password,
+	loading,
+	toast,
+	router
+) {
 	loading = true;
 	axios
 		.post("/auth/login", {
@@ -14,9 +20,14 @@ export default function HandleLogin(username, password, loading) {
 				res.data.role,
 				res.data.productId
 			);
+			toast.success("Login Successfully!");
+			setTimeout(() => {
+				router.push("/dashboard");
+			}, 500);
 		})
 		.catch(() => {
-			throw "Something Went Wrong ...";
+			loading = false;
+			toast.error("Something Went Wrong ...");
 		});
 }
 

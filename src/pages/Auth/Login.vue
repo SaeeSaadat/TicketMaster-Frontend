@@ -49,14 +49,15 @@ export default {
 	methods: {
 		Login() {
 			try {
-				HandleLogin(this.username, this.password, this.loading);
-				this.$toast.success("Login Successfully!");
-				setTimeout(() => {
-					this.$router.push("/dashboard");
-				}, 500);
+				HandleLogin(
+					this.username,
+					this.password,
+					this.loading,
+					this.$toast,
+					this.$router
+				);
 			} catch (error) {
-				this.loading = false;
-				this.$toast.error(error);
+				
 			}
 		},
 	},
