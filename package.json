@@ -5,6 +5,7 @@
     "serve": "vite preview",
     "build": "vite build",
     "dev": "vite",
+    "test": "jest",
     "prod": "vite build & vite preview"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
     "vue2-transitions": "^0.3.0"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "sass": "1.69.5"
   }
 }

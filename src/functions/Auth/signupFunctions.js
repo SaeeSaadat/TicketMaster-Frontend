@@ -1,6 +1,13 @@
 import axios from "axios";
 
-export default function HandleSignup(username, password, repassword, loading) {
+export default function HandleSignup(
+	username,
+	password,
+	repassword,
+	loading,
+	toast,
+	router
+) {
 	loading = true;
 	validatePassword(password, repassword);
 	axios
@@ -8,8 +15,14 @@ export default function HandleSignup(username, password, repassword, loading) {
 			username,
 			password,
 		})
+		.then(() => {
+			toast.success("Registered Successfully!");
+			setTimeout(() => {
+				router.push("/login");
+			}, 1000);
+		})
 		.catch(() => {
-			throw "Something went wrong!";
+			toast.error("Something went wrong!");
 		});
 }
 

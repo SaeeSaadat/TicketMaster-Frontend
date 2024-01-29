@@ -64,12 +64,10 @@ export default {
 					this.username,
 					this.password,
 					this.rePassword,
-					this.loading
+					this.loading,
+					this.$toast,
+					this.$router
 				);
-				this.$toast.success("Registered Successfully!");
-				setTimeout(() => {
-					this.$router.push("/login");
-				}, 1000);
 			} catch (error) {
 				this.loading = false;
 				this.$toast.error(error);
