@@ -17,7 +17,7 @@ const EditUser = () => import("@/pages/UserProfile/EditUser.vue");
 
 //Tickets
 const Ticket = () => import("@/pages/Tickets/Ticket.vue");
-const AllTickets = () => import("@/pages/Tickets/AllTickets.vue");
+const AllUserTickets = () => import("@/pages/Tickets/AllUserTickets.vue");
 const CreateTicket = () => import("@/pages/Tickets/CreateTicket.vue")
 
 //404 Page
@@ -45,7 +45,7 @@ const routes = [
 			{
 				path: "myTickets",
 				name: "My Tickets",
-				component: AllTickets,
+				component: AllUserTickets,
 			},
 			{
 				path: "myProduct",

@@ -32,14 +32,22 @@
 
 <script>
 import { SaveThisProductDataInLocalStorage } from "@/functions/Product/UniqueProductPageFunctions";
+import axios from "axios";
 export default {
 	data() {
 		return {
 			thisProductId: this.$router.params.id,
+			thisProductTitle: "",
+			thisProductDescription: "",
+			thisProductPicture: "",
 		};
 	},
 	beforeMount() {
-		//TODO: getProductInformation
+		axios.get(`/product/${this.thisProductId}`).then((res) => {
+			this.thisProductTitle = res.data.name;
+			this.thisProductDescription = res.data.description;
+			this.thisProductPicture = res.data.imageId;
+		});
 	},
 	mounted() {
 		SaveThisProductDataInLocalStorage(
@@ -48,17 +56,6 @@ export default {
 			this.thisProductDescription,
 			this.thisProductPicture
 		);
-	},
-	computed: {
-		thisProductTitle() {
-			return localStorage.getItem("thisProductTitle");
-		},
-		thisProductDescription() {
-			return localStorage.getItem("thisProductDescription");
-		},
-		thisProductPicture() {
-			return localStorage.getItem("thisProductPicture");
-		},
 	},
 };
 </script>

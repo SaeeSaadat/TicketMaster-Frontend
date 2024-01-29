@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<card class="w-50 mx-auto">
-			<p class="h1 text-center mt-3">{{ productTitle }}adfasdfasdfas</p>
+			<p class="h1 text-center mt-3">{{ productTitle }}</p>
 
 			<customed-input
 				customedDivClass="col-8 mb-4 mx-auto"
@@ -71,7 +71,7 @@ export default {
 		},
 	},
 	created() {
-		if (this.productTitle == "null") this.$router.push("/dashboard");
+		if (!this.productId || this.productId == "null") this.$router.push("/dashboard");
 	},
 };
 </script>
