@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function HandleLogin(username, password, loading) {
+export default function HandleLogin(username, password, loading) {
 	loading = true;
 	axios
 		.post("/auth/login", {
@@ -26,5 +26,3 @@ function SaveCurrentUserDataInLocalStorage(userId, username, role, productId) {
 	localStorage.setItem("username", username);
 	localStorage.setItem("productId", productId);
 }
-
-module.exports = HandleLogin;

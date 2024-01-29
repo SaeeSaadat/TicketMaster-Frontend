@@ -33,7 +33,7 @@
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
 
-import { submitNewTicket } from "@/functions/Ticket/createTicket.js";
+import submitNewTicket from "@/functions/Ticket/createTicket.js";
 
 export default {
 	components: { DatePicker },
@@ -41,7 +41,6 @@ export default {
 		return {
 			ticketTitle: "",
 			ticketDescription: "",
-			ticketCreationTime: "",
 			ticketDeadline: "",
 		};
 	},
@@ -51,7 +50,6 @@ export default {
 				submitNewTicket(
 					this.ticketTitle,
 					this.ticketDescription,
-					this.ticketCreationTime,
 					this.ticketDeadline,
 					this.$route.params.ticketType,
 					this.productTitle
@@ -71,7 +69,8 @@ export default {
 		},
 	},
 	created() {
-		if (!this.productId || this.productId == "null") this.$router.push("/dashboard");
+		if (!this.productId || this.productId == "null")
+			this.$router.push("/dashboard");
 	},
 };
 </script>

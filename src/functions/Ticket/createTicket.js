@@ -1,19 +1,28 @@
 import axios from "axios";
 
-export function submitNewTicket(
+export default function submitNewTicket(
 	title,
-	desc,
-	created,
+	description,
 	deadline,
 	type,
-	productTitle
+	productName
 ) {
 	const parsedDeadlineDate = parseDeadlineDate(deadline);
 	const isDateValid = dateValidation(parsedDeadlineDate);
 	if (!isDateValid) {
 		throw "Date is past ...";
 	} else {
-		console.log("Hello");
+		axios
+			.post("/ticket", {
+				title,
+				description,
+				productName,
+				deadline,
+				type,
+			})
+			.catch(() => {
+				throw "Something went wrong";
+			});
 	}
 }
 
@@ -42,7 +51,7 @@ function dateValidation(parsedDeadlineDate) {
 	else if (deadlineYear == year) {
 		if (deadlineMonth > month) return true;
 		else if (deadlineMonth == month) {
-			return (deadlineDay >= day)
+			return deadlineDay >= day;
 		} else return true;
 	} else return false;
 }

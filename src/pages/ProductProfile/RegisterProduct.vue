@@ -28,7 +28,11 @@
 				/>
 			</div>
 		</div>
-		<button :disabled="!name" @click="registerNewProduct" class="btn btn-primary w-100">
+		<button
+			:disabled="!productName"
+			@click="registerNewProduct"
+			class="btn btn-primary w-100"
+		>
 			Register Product
 		</button>
 	</card>
@@ -41,7 +45,7 @@ export default {
 		return {
 			productName: "",
 			productDescription: "",
-			imageUrl: "",
+			imageUrl:"",
 		};
 	},
 	methods: {
@@ -53,12 +57,13 @@ export default {
 					imageId: this.imageUrl,
 				})
 				.then((res) => {
-					this.$toast.success("Product Registered successfully");
+					this.$toast.success("Product Registered Successfully");
 					localStorage.setItem("role", "ADMIN");
 					localStorage.setItem("productId", res.data.id);
 					this.$router.push("/dashboard");
 				})
-				.catch(() => {
+				.catch((e) => {
+					console.log(e);
 					this.$toast.error("Something went wrong!");
 				});
 		},

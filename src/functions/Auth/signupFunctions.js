@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function HandleSignup(username, password, repassword, loading) {
+export default function HandleSignup(username, password, repassword, loading) {
 	loading = true;
 	validatePassword(password, repassword);
 	axios
@@ -19,5 +19,3 @@ function validatePassword(password, repassword) {
 	if (!regex.test(password)) throw "please choose a stronger password!";
 	if (password !== repassword) throw "confirmation password does not match!";
 }
-
-module.exports = HandleSignup;

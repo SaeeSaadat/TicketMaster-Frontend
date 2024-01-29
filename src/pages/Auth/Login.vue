@@ -52,7 +52,7 @@ export default {
 				HandleLogin(this.username, this.password, this.loading);
 				this.$toast.success("Login Successfully!");
 				setTimeout(() => {
-					$router.push("/dashboard");
+					this.$router.push("/dashboard");
 				}, 500);
 			} catch (error) {
 				this.loading = false;
