@@ -5,19 +5,19 @@
 				<label for="ticketTypes" class="mr-3 mb-4"><h4>Ticket Type:</h4></label>
 				<select v-model="selectedTicketType" name="ticketTypes" class="mr-5">
 					<option value="">-</option>
-					<option value="bug">bug</option>
-					<option value="question">question</option>
-					<option value="information">information</option>
+					<option value="BUG">BUG</option>
+					<option value="QUESTION">QUESTION</option>
+					<option value="SUGGESTION">SUGGESTION</option>
 				</select>
 			</div>
 			<div>
 				<label for="status" class="mr-3 mb-4"><h4>Status:</h4></label>
 				<select v-model="selectedTicketStatus" name="status" class="mr-5">
 					<option value="">-</option>
-					<option value="open">open</option>
-					<option value="closed">closed</option>
-					<option value="pending">pending</option>
-					<option value="needs_reply">needs reply</option>
+					<option value="OPEN">OPEN</option>
+					<option value="CLOSED">CLOSED</option>
+					<option value="PENDING">PENDING</option>
+					<option value="WAITING_FOR_USER">WAITING_FOR_USER</option>
 				</select>
 			</div>
 			<div>
@@ -99,7 +99,7 @@ export default {
 					params: {
 						page: this.page,
 						pageSize: 8,
-						type: selectedTicketType ? this.selectedTicketType : null,
+						type: this.selectedTicketType ? this.selectedTicketType : null,
 						productName: this.selectedProductName
 							? this.selectedProductName
 							: null,

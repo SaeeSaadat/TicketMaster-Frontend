@@ -97,7 +97,7 @@ export default {
 					params: {
 						page: this.page,
 						pageSize: 8,
-						type: selectedTicketType ? this.selectedTicketType : null,
+						type: this.selectedTicketType ? this.selectedTicketType : null,
 						productName: this.selectedProductName
 							? this.selectedProductName
 							: null,
