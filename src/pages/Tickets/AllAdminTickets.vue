@@ -1,6 +1,5 @@
 <template>
 	<div class="card">
-	{{tickets}}
 		<div class="card-header d-flex justify-content-between">
 			<div>
 				<label for="ticketTypes" class="mr-3 mb-4"><h4>Ticket Type:</h4></label>
@@ -44,7 +43,7 @@
 			<button @click="doFilters" class="btn btn-primary">Do Filters</button>
 		</div>
 		<div class="card-body">
-			<product-tickets v-if="tickets" :tickets="tickets.content" />
+			<product-tickets v-if="tickets" :tickets="tickets" />
 			<div class="mt-5" v-else><h1>There Is No Ticket ...</h1></div>
 			<div v-show="tickets">
 				<button class="btn btn-primary" :disabled="page == 0" @click="goback">
