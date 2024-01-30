@@ -9,6 +9,7 @@ export default function submitNewTicket(
 	toast,
 	router
 ) {
+	
 	const thisProduct = localStorage.getItem("thisProductId");
 	const parsedDeadlineDate = parseDeadlineDate(deadline);
 	const isDateValid = dateValidation(parsedDeadlineDate);
