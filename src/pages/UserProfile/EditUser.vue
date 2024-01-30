@@ -54,9 +54,9 @@ export default {
 		return {
 			version: 0,
 			imageUrl: "",
-			oldPassword: "",
-			newPassword: "",
-			newRePassword: "",
+			oldPassword: null,
+			newPassword: null,
+			newRePassword: null,
 		};
 	},
 	mounted() {
