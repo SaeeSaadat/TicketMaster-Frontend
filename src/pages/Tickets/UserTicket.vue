@@ -28,7 +28,7 @@
 				></i>
 				<p></p>
 				<router-link
-					:to="`/product/${i.productId}/ticket/${i.ticketId}"
+					:to="`/product/${i.productId}/ticket/${i.ticketId}`"
 					class="btn btn-primary mt-3"
 					>Show</router-link
 				>
