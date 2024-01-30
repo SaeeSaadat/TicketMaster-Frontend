@@ -6,7 +6,7 @@
 			<h4>DueDate: {{ ticketDetails.deadline }}</h4>
 			<h2>Status: {{ ticketDetails.status }}</h2>
 
-			<div v-if="role == 'ADMIN' && i.productId == productId">
+			<div v-if="role == 'ADMIN' && ticketDetails.productId == productId">
 				<label for="status" class="mr-3 mb-4"><h4>Change Status:</h4></label>
 				<select v-model="changedStatus" name="changeStatus">
 					<option :value="null">-</option>
@@ -59,11 +59,6 @@
 <script>
 import axios from "axios";
 export default {
-	props: {
-		tickets: {
-			type: Array,
-		},
-	},
 	data() {
 		return {
 			newContent: "",
