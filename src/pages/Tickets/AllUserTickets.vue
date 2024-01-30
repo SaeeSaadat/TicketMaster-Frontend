@@ -1,6 +1,5 @@
 <template>
 	<div class="card">
-	{{tickets}}
 		<div class="card-header d-flex justify-content-between">
 			<div>
 				<label for="ticketTypes" class="mr-3 mb-4"><h4>Ticket Type:</h4></label>
