@@ -11,19 +11,19 @@
 				<p class="description">Description: {{ thisProductDescription }}</p>
 				<div class="row justify-content-center mt-4">
 					<router-link
-						:to="`/dashboard/submitTicket/information`"
+						:to="`/dashboard/submitTicket/INFORMATION`"
 						class="btn btn-primary mr-4"
 						title="information"
 						><i class="fa fa-info"></i
 					></router-link>
 					<router-link
-						:to="`/dashboard/submitTicket/question`"
+						:to="`/dashboard/submitTicket/QUESTION`"
 						class="btn mr-4"
 						title="question"
 						><i class="fa fa-question"></i
 					></router-link>
 					<router-link
-						:to="`/dashboard/submitTicket/bug`"
+						:to="`/dashboard/submitTicket/BUG`"
 						class="btn btn-danger"
 						title="bug"
 						><i class="fa fa-bug"></i
