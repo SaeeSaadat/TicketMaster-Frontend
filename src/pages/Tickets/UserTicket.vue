@@ -1,15 +1,16 @@
 <template>
 	<div class="row">
 		<div v-for="i in tickets" class="font-icon-list col-3">
+			{{ i }}
 			<div id="cardBodyDetails">
 				<p class="h3 mb-2">{{ resizeText(i.title, "title") }}</p>
 				<div class="dflex">
 					<i class="fa fa-clock"></i>&nbsp;
-					<span>Created: {{ i.created.substring(0, 10) }}</span>
+					<span>Created: {{ i.created }}</span>
 				</div>
 				<div class="dflex">
 					<i class="fa fa-window-close"></i>&nbsp;
-					<span>DueDate: {{ i.deadline.substring(0, 10) }}</span>
+					<span>DueDate: {{ i.deadline }}</span>
 				</div>
 				<i
 					v-if="i.type == 'BUG'"
@@ -28,7 +29,7 @@
 				></i>
 				<p></p>
 				<router-link
-					:to="`/product/${i.productId}/ticket/${i.ticketId}`"
+					:to="`product/${i.productId}/ticket/${i.ticketId}`"
 					class="btn btn-primary mt-3"
 					>Show</router-link
 				>
