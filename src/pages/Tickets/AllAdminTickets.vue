@@ -93,8 +93,9 @@ export default {
 	},
 	methods: {
 		doFilters() {
+			const productId = localStorage.getItem("productId");
 			axios
-				.get("/ticket", {
+				.get(`/ticket/product/${productId}/ticket`, {
 					params: {
 						page: this.page,
 						pageSize: 8,
