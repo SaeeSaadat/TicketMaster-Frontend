@@ -4,7 +4,7 @@
 			<div>
 				<label for="ticketTypes" class="mr-3 mb-4"><h4>Ticket Type:</h4></label>
 				<select v-model="selectedTicketType" name="ticketTypes" class="mr-5">
-					<option value="">-</option>
+					<option :value="null">-</option>
 					<option value="BUG">BUG</option>
 					<option value="QUESTION">QUESTION</option>
 					<option value="SUGGESTION">SUGGESTION</option>
@@ -13,7 +13,7 @@
 			<div>
 				<label for="status" class="mr-3 mb-4"><h4>Status:</h4></label>
 				<select v-model="selectedTicketStatus" name="status" class="mr-5">
-					<option value="">-</option>
+					<option :value="null">-</option>
 					<option value="OPEN">OPEN</option>
 					<option value="CLOSED">CLOSED</option>
 					<option value="PENDING">PENDING</option>
@@ -25,7 +25,7 @@
 					><h4>Product Name:</h4></label
 				>
 				<select v-model="selectedProductName" name="productNames">
-					<option value="">-</option>
+					<option :value="null">-</option>
 					<option
 						v-for="productName in allProductNamesWithSubmittedTickets"
 						:value="productName"

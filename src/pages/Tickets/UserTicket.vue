@@ -1,7 +1,6 @@
 <template>
 	<div class="row">
 		<div v-for="i in tickets" class="font-icon-list col-3">
-			{{ i }}
 			<div id="cardBodyDetails">
 				<p class="h3 mb-2">{{ resizeText(i.title, "title") }}</p>
 				<div class="dflex">

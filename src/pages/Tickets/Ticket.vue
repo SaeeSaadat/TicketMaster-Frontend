@@ -6,10 +6,10 @@
 			<h4>DueDate: {{ ticketDetails.deadline }}</h4>
 			<h2>Status: {{ ticketDetails.status }}</h2>
 
-			<div v-if="role == 'ADMIN'">
+			<div v-if="role == 'ADMIN' && i.productId == productId">
 				<label for="status" class="mr-3 mb-4"><h4>Change Status:</h4></label>
 				<select v-model="changedStatus" name="changeStatus">
-					<option value="-">-</option>
+					<option :value="null">-</option>
 					<option value="OPEN">OPEN</option>
 					<option value="CLOSED">CLOSED</option>
 					<option value="PENDING">PENDING</option>
@@ -100,6 +100,9 @@ export default {
 				.catch(() => {
 					this.$toast.error("Something went wrong!");
 				});
+		},
+		productId() {
+			return localStorage.getItem("productId");
 		},
 	},
 	computed: {
