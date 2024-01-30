@@ -39,28 +39,17 @@ export default {
 			imageUrl: "",
 			newProductDescription: "",
 			version: "",
+			productId: "",
+			productDescription: "",
 		};
 	},
 	mounted() {
+		this.productId = localStorage.getItem("productId");
+		this.productDescription = localStorage.getItem("currentProductDescription");
 		axios.get(`/product/${this.productId}`).then((res) => {
 			this.version = res.data.version;
 			this.newProductDescription = res.data.description;
 		});
-	},
-	updateProduct() {
-		axios.put(`/product/${productId}`, {
-			version: this.version,
-			description: this.newProductDescription,
-			imageId: !!this.imageUrl ? imageUrl : "",
-		});
-	},
-	computed: {
-		productId() {
-			return localStorage.getItem("productId");
-		},
-		productDescription() {
-			return localStorage.getItem("currentProductDescription");
-		},
 	},
 	methods: {
 		triggerPicturePickerInput() {
@@ -75,6 +64,20 @@ export default {
 			});
 
 			fileReader.readAsDataURL(file);
+		},
+		updateProduct() {
+			axios
+				.put(`/product/${this.productId}`, {
+					version: this.version,
+					description: this.newProductDescription,
+					imageId: !!this.imageUrl ? this.imageUrl : "",
+				})
+				.then(() => {
+					this.$toast.succes("Done...");
+				})
+				.catch(() => {
+					this.$toast.error("Something went wrong!");
+				});
 		},
 	},
 };

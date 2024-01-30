@@ -9,7 +9,7 @@
 				<p class="description">{{ myProductDescription }}</p>
 			</div>
 
-			<router-link to="/editProduct/" class="btn btn-primary w-100"
+			<router-link :to="`editProduct/${myProductId}`" class="btn btn-primary w-100"
 				>Edit</router-link
 			>
 		</card>
