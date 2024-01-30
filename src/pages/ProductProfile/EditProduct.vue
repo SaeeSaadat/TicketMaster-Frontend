@@ -10,11 +10,11 @@
 		</div>
 		<textarea
 			v-model="newProductDescription"
-			class="form-control col-12"
+			class="form-control col-12 mb-5"
 			:placeholder="newProductDescription"
 		/>
 		<div>
-			<button class="btn" @click="triggerPicturePickerInput">
+			<button class="btn ml-2" @click="triggerPicturePickerInput">
 				upload new product picture
 			</button>
 
