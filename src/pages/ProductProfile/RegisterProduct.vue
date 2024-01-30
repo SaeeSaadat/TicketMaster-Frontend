@@ -10,11 +10,13 @@
 					v-model="productName"
 				/>
 			</div>
-			<customed-textarea
-				customedTextareaClass="form-control w-75 mx-auto"
-				placeholder="Please Write a Brief Description of Your product ..."
+
+			<textarea
 				v-model="productDescription"
+				class="form-control w-75 mx-auto"
+				placeholder="Please Write a Brief Description of Your product .."
 			/>
+
 			<div>
 				<button class="btn mt-5" @click="triggerPicturePickerInput">
 					Upload profile picture
@@ -45,7 +47,7 @@ export default {
 		return {
 			productName: "",
 			productDescription: "",
-			imageUrl:"",
+			imageUrl: "",
 		};
 	},
 	methods: {

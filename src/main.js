@@ -13,7 +13,6 @@ import "@/Plugins/Libraries/vue-toast.js";
 //Customed Components
 import "@/Plugins/Components/card.js";
 import "@/Plugins/Components/customed-input.js";
-import "@/Plugins/Components/customed-text-area.js";
 
 new Vue({
 	router,

@@ -8,7 +8,8 @@ const Signup = () => import("@/pages/Auth/Signup.vue");
 
 //Product
 const MyProduct = () => import("@/pages/ProductProfile/MyProduct.vue");
-const UniqueProductPage = () => import("@/pages/ProductProfile/UniqueProductPage.vue");
+const UniqueProductPage = () =>
+	import("@/pages/ProductProfile/UniqueProductPage.vue");
 const EditProduct = () => import("@/pages/ProductProfile/EditProduct.vue");
 
 //User
@@ -18,11 +19,10 @@ const EditUser = () => import("@/pages/UserProfile/EditUser.vue");
 //Tickets
 const Ticket = () => import("@/pages/Tickets/Ticket.vue");
 const AllUserTickets = () => import("@/pages/Tickets/AllUserTickets.vue");
-const CreateTicket = () => import("@/pages/Tickets/CreateTicket.vue")
+const CreateTicket = () => import("@/pages/Tickets/CreateTicket.vue");
 
 //404 Page
 const PageNotFound = () => import("@/pages/404/NotFoundPage.vue");
-
 
 const routes = [
 	{ path: "/", redirect: "/login" },
@@ -58,17 +58,25 @@ const routes = [
 				component: EditUser,
 			},
 			{
-				path: "ticket",
-				name: "ticket",
-				component: Ticket,
-			},
-			{
-				path: "editProduct",
+				path: "editProduct/:id",
 				name: "Edit Product",
 				component: EditProduct,
 			},
-			{ path: "/product/:id/view", name: "Business Product", component: UniqueProductPage },
-			{ path: "/submitTicket/:ticketType", name: "Submit New Ticket", component: CreateTicket }
+			{
+				path: "/product/:id/view",
+				name: "Business Product",
+				component: UniqueProductPage,
+			},
+			{
+				path: "/submitTicket/:ticketType",
+				name: "Submit New Ticket",
+				component: CreateTicket,
+			},
+			{
+				path: "/product/:productId/ticket/:ticketId",
+				name: "ticket",
+				component: Ticket,
+			},
 		],
 	},
 	{ path: "*", component: PageNotFound },

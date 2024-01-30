@@ -3,20 +3,21 @@
 		<register-product />
 	</div>
 	<div v-else>
-		<admin-product-page />
+		<AdminProductPage />
 		<all-admin-tickets />
 	</div>
 </template>
 
 <script>
 import RegisterProduct from "@/pages/ProductProfile/RegisterProduct.vue";
-import AdminProductPage from "@/pages/ProductProfile/RegisterProduct.vue";
+import AdminProductPage from "@/pages/ProductProfile/AdminProductPage.vue";
 import AllAdminTickets from "@/pages/Tickets/AllAdminTickets.vue";
 
 export default {
 	components: {
 		RegisterProduct,
 		AllAdminTickets,
+		AdminProductPage
 	},
 	computed: {
 		role() {

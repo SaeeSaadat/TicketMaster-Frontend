@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div v-for="i in this.tickets" class="font-icon-list col-4">
+        <div v-for="i in this.tickets" class="font-icon-list col-3">
             <div id="cardBodyDetails">
                 <i title="Lamp" class="text-white fa fa-lightbulb"></i>
                 <p class="h3 mb-2">{{ resizeText(i.title, "title") }}</p>

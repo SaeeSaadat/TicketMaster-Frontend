@@ -11,10 +11,10 @@
 				v-model="ticketTitle"
 			/>
 
-			<customed-textarea
-				customedTextareaClass="form-control w-75 mx-auto mb-5"
-				placeholder="Please Write a Brief Description of Your Business ..."
+			<textarea
 				v-model="ticketDescription"
+				class="form-control w-75 mx-auto mb-5"
+				placeholder="Please Write a Brief Description of Your Business ..."
 			/>
 
 			<div class="row mb-5 w-100 mx-auto">
@@ -51,7 +51,7 @@ export default {
 					this.ticketTitle,
 					this.ticketDescription,
 					this.ticketDeadline,
-					this.$route.params.ticketType,
+					this.$router.params.ticketType,
 					this.productTitle
 				);
 				this.$toast.success("Ticket Submitted");

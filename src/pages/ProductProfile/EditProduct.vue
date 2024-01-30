@@ -8,13 +8,11 @@
 				:disabled="true"
 			/>
 		</div>
-
-		<customed-textarea
-			customedTextareaClass="form-control col-12"
-			:placeholder="newProductDescription"
+		<textarea
 			v-model="newProductDescription"
+			class="form-control col-12"
+			:placeholder="newProductDescription"
 		/>
-
 		<div>
 			<button class="btn" @click="triggerPicturePickerInput">
 				upload new product picture
@@ -36,49 +34,48 @@
 <script>
 import axios from "axios";
 export default {
-    data() {
-        return {
-            imageUrl: "",
-            newProductDescription: "",
-            version: ""
-        };
-    },
-    mounted() {
-        axios.get(`/product/${this.productId}`).then((res) => {
-            this.version = res.data.version
-            this.newProductDescription = res.data.description
-        });
-    },
-    updateProduct() {
-        axios.put(`/product/${productId}`, {
-            "version": this.version,
-            "description": this.newProductDescription,
-            "imageId": !!this.imageUrl ? imageUrl : ""
-        })
-    },
-    computed: {
-        productId() {
-            return localStorage.getItem("productId")
-        },
-        productDescription() {
-            return localStorage.getItem("currentProductDescription")
-        }
-    },
-    methods: {
-        triggerPicturePickerInput() {
-            this.$refs.fileInput.click();
-        },
-        handlePickedFile(event) {
-            const file = event.target.files[0];
-            const fileReader = new FileReader();
+	data() {
+		return {
+			imageUrl: "",
+			newProductDescription: "",
+			version: "",
+		};
+	},
+	mounted() {
+		axios.get(`/product/${this.productId}`).then((res) => {
+			this.version = res.data.version;
+			this.newProductDescription = res.data.description;
+		});
+	},
+	updateProduct() {
+		axios.put(`/product/${productId}`, {
+			version: this.version,
+			description: this.newProductDescription,
+			imageId: !!this.imageUrl ? imageUrl : "",
+		});
+	},
+	computed: {
+		productId() {
+			return localStorage.getItem("productId");
+		},
+		productDescription() {
+			return localStorage.getItem("currentProductDescription");
+		},
+	},
+	methods: {
+		triggerPicturePickerInput() {
+			this.$refs.fileInput.click();
+		},
+		handlePickedFile(event) {
+			const file = event.target.files[0];
+			const fileReader = new FileReader();
 
-            fileReader.addEventListener("load", () => {
-                this.imageUrl = fileReader.result;
-            });
+			fileReader.addEventListener("load", () => {
+				this.imageUrl = fileReader.result;
+			});
 
-            fileReader.readAsDataURL(file);
-        },
-    },
-
+			fileReader.readAsDataURL(file);
+		},
+	},
 };
 </script>

@@ -1,60 +1,124 @@
 <template>
 	<div class="card">
 		<div class="card-header d-flex justify-content-between">
-			<div class="form-group d-flex mt-4">
-				<input
-					type="text"
-					class="form-control my-auto mr-3 input-xl border-primary"
-				/>
-				<button class="btn my-auto mr-5 w-50">Search ...</button>
+			<div>
+				<label for="ticketTypes" class="mr-3 mb-4"><h4>Ticket Type:</h4></label>
+				<select v-model="selectedTicketType" name="ticketTypes" class="mr-5">
+					<option value="">-</option>
+					<option value="bug">bug</option>
+					<option value="question">question</option>
+					<option value="information">information</option>
+				</select>
 			</div>
+			<div>
+				<label for="status" class="mr-3 mb-4"><h4>Status:</h4></label>
+				<select v-model="selectedTicketStatus" name="status" class="mr-5">
+					<option value="">-</option>
+					<option value="open">open</option>
+					<option value="closed">closed</option>
+					<option value="pending">pending</option>
+					<option value="needs_reply">needs reply</option>
+				</select>
+			</div>
+			<div>
+				<label for="productNames" class="mr-3 mb-4"
+					><h4>Product Name:</h4></label
+				>
+				<select v-model="selectedProductName" name="productNames">
+					<option value="">-</option>
+					<option
+						v-for="productName in allProductNamesWithSubmittedTickets"
+						:value="productName"
+					>
+						{{ productName }}
+					</option>
+				</select>
+			</div>
+			<div class="ml-1">
+				<p class="mr-4 h4">createdAfter:</p>
+				<DatePicker v-model="createdAfter" valueType="format" class="mr-5" />
+				<p class="mr-4 h4">createdBefore:</p>
+				<DatePicker v-model="createdBefore" valueType="format" />
+			</div>
+			<button @click="doFilters" class="btn btn-primary">Do Filters</button>
 		</div>
 		<div class="card-body">
-			<user-tickets :tickets="tickets" />
+			<user-tickets v-if="tickets" :tickets="tickets" />
+			<div class="mt-5" v-else><h1>There Is No Ticket ...</h1></div>
+			<div v-show="tickets">
+				<button :disabled="page == 0" @click="goback">Previous Page</button>
+				<button :disabled="1" @click="goforward">Next Page</button>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import axios from "axios";
 import UserTickets from "./UserTicket.vue";
+import DatePicker from "vue2-datepicker";
+import "vue2-datepicker/index.css";
 export default {
 	components: {
 		UserTickets,
+		DatePicker,
 	},
 	data() {
 		return {
-			tickets: [
-				{
-					id: 1,
-					title: "testing the title",
-				},
-				{
-					id: 1,
-					title: "testing the title",
-				},
-				{
-					id: 1,
-					title: "testing the title",
-				},
-				{
-					id: 1,
-					title: "testing the title",
-				},
-				{
-					id: 1,
-					title: "testing the title",
-				},
-				{
-					id: 1,
-					title: "testing the title",
-				},
-			],
+			tickets: "",
+			createdAfter: "",
+			createdBefore: "",
+			selectedTicketStatus: "",
+			selectedTicketType: "",
+			selectedProductName: "",
+			allProductNamesWithSubmittedTickets: "",
+			page: 0,
 		};
+	},
+	mounted() {
+		axios
+			.get("/ticket", {
+				params: { page: this.page, pageSize: 8 },
+			})
+			.then((res) => {
+				tickets = res.data.content;
+			});
 	},
 	computed: {
 		role() {
 			const role = localStorage.getItem("role");
 			return role == "null" ? "" : role;
+		},
+	},
+	methods: {
+		doFilters() {
+			axios
+				.get("/ticket", {
+					params: {
+						page: this.page,
+						pageSize: 8,
+						type: selectedTicketType ? this.selectedTicketType : null,
+						productName: this.selectedProductName
+							? this.selectedProductName
+							: null,
+						createdAfter: this.createdAfter ? this.createdAfter : null,
+						createdBefore: this.createdBefore ? this.createdBefore : null,
+						status: this.selectedTicketStatus
+							? this.selectedTicketStatus
+							: null,
+					},
+				})
+				.then((res) => {
+					tickets = res.data.content;
+				});
+		},
+		goback() {
+			this.page--;
+			this.doFilters();
+		},
+		goforward() {
+			this.page++;
+			this.doFilters;
 		},
 	},
 };
