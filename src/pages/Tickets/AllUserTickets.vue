@@ -109,6 +109,7 @@ export default {
 					},
 				})
 				.then((res) => {
+				console.log(res);
 					tickets = res.data.content;
 				});
 		},

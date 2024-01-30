@@ -5,23 +5,32 @@ export default function submitNewTicket(
 	description,
 	deadline,
 	type,
-	productName
+	productName,
+	toast,
+	router
 ) {
+	const thisProduct = localStorage.getItem("thisProductId");
 	const parsedDeadlineDate = parseDeadlineDate(deadline);
 	const isDateValid = dateValidation(parsedDeadlineDate);
 	if (!isDateValid) {
-		throw "Date is past ...";
+		toast.error("Date is past ...");
 	} else {
 		axios
-			.post("/ticket", {
+			.post(`/product/${thisProduct}/ticket`, {
 				title,
 				description,
 				productName,
 				deadline,
 				type,
 			})
+			.then(() => {
+				toast.success("Ticket Submitted");
+				setTimeout(() => {
+					router.back();
+				}, 1000);
+			})
 			.catch(() => {
-				throw "Something went wrong";
+				toast.error("Error in Submitting Ticket");
 			});
 	}
 }
@@ -40,7 +49,7 @@ function dateValidation(parsedDeadlineDate) {
 	const date = new Date();
 
 	const year = date.getFullYear();
-	const month = date.getMonth();
+	const month = date.getMonth() + 1;
 	const day = date.getDate();
 
 	const deadlineYear = parsedDeadlineDate.year;
@@ -49,8 +58,9 @@ function dateValidation(parsedDeadlineDate) {
 
 	if (deadlineYear > year) return true;
 	else if (deadlineYear == year) {
-		if (deadlineMonth > month) return true;
-		else if (deadlineMonth == month) {
+		if (deadlineMonth > month) {
+			return true;
+		} else if (deadlineMonth == month) {
 			return deadlineDay >= day;
 		} else return true;
 	} else return false;

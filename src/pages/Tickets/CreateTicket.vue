@@ -46,21 +46,15 @@ export default {
 	},
 	methods: {
 		submitTicket() {
-			try {
-				submitNewTicket(
-					this.ticketTitle,
-					this.ticketDescription,
-					this.ticketDeadline,
-					this.$route.params.ticketType,
-					this.productTitle
-				);
-				this.$toast.success("Ticket Submitted");
-				setTimeout(() => {
-					this.$router.back();
-				}, 1000);
-			} catch (message) {
-				this.$toast.error(message);
-			}
+			submitNewTicket(
+				this.ticketTitle,
+				this.ticketDescription,
+				this.ticketDeadline,
+				this.$route.params.ticketType,
+				this.productTitle,
+				this.$toast,
+				this.$router
+			);
 		},
 	},
 	computed: {
