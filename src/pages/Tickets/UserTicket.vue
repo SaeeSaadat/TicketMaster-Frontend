@@ -1,19 +1,19 @@
 <template>
     <div class="row">
-        <div v-for="i in this.tickets" class="font-icon-list col-3">
+        <div v-for="i in this.tickets.content" class="font-icon-list col-3">
             <div id="cardBodyDetails">
                 <p class="h3 mb-2">{{ resizeText(i.title, "title") }}</p>
                 <div class="dflex">
                     <i class="fa fa-clock"></i>&nbsp;
-                    <span>Created: {{tickets.created}}</span>
+                    <span>Created: {{i.created}}</span>
                 </div>
                 <div class="dflex">
                     <i class="fa fa-window-close"></i>&nbsp;
-                    <span>DueDate: {{ticekts.deadline}}</span>
+                    <span>DueDate: {{i.deadline}}</span>
                 </div>
                 <i title="Lamp" class="text-white fa fa-bug mt-3"></i>
                 <p></p>
-                <router-link to=`/product/${tickets.productId}/ticket/${ticekts.ticketId}` class="btn btn-primary mt-3">Show</router-link>
+                <router-link to=`/product/${i.productId}/ticket/${i.ticketId}` class="btn btn-primary mt-3">Show</router-link>
             </div>
         </div>
     </div>
