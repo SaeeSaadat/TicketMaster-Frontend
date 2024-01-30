@@ -81,7 +81,7 @@ export default {
 				params: { page: this.page, pageSize: 8 },
 			})
 			.then((res) => {
-				tickets = res.data.content;
+				this.tickets = res.data.content;
 			});
 	},
 	computed: {
@@ -109,8 +109,7 @@ export default {
 					},
 				})
 				.then((res) => {
-				console.log(res);
-					tickets = res.data.content;
+					this.tickets = res.data.content;
 				});
 		},
 		goback() {
