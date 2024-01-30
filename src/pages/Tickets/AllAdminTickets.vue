@@ -78,7 +78,7 @@ export default {
 	mounted() {
 		const productId = localStorage.getItem("productId");
 		axios
-			.get(`/product/${productId}/ticket`, {
+			.get(`/ticket`, {
 				params: { page: this.page, pageSize: 8 },
 			})
 			.then((res) => {
