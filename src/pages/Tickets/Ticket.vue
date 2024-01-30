@@ -101,14 +101,14 @@ export default {
 					this.$toast.error("Something went wrong!");
 				});
 		},
-		productId() {
-			return localStorage.getItem("productId");
-		},
 	},
 	computed: {
 		role() {
 			const role = localStorage.getItem("role");
 			return role == "null" ? "" : "ADMIN";
+		},
+		productId() {
+			return localStorage.getItem("productId");
 		},
 	},
 };
