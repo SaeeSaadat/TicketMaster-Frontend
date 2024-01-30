@@ -40,22 +40,20 @@ import axios from "axios";
 export default {
 	data() {
 		return {
-			thisProductId: "",
 			thisProductTitle: "",
 			thisProductDescription: "",
 			thisProductPicture: "",
 		};
 	},
 	mounted() {
-		this.thisProductId = this.$route.params.id;
-		axios.get(`/product/${this.thisProductId}/`).then((res) => {
-			console.log(res);
+		const thisProductId = this.$route.params.id;
+		axios.get(`/product/${thisProductId}`).then((res) => {
 			this.thisProductTitle = res.data.name;
 			this.thisProductDescription = res.data.description;
 			this.thisProductPicture = res.data.imageId;
 		});
 		SaveThisProductDataInLocalStorage(
-			this.thisProductId,
+			thisProductId,
 			this.thisProductTitle,
 			this.thisProductDescription,
 			this.thisProductPicture
