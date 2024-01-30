@@ -68,9 +68,5 @@ export default {
 			return localStorage.getItem("thisProductTitle");
 		},
 	},
-	created() {
-		if (!this.productId || this.productId == "null")
-			this.$router.push("/dashboard");
-	},
 };
 </script>
