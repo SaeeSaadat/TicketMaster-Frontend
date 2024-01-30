@@ -51,8 +51,8 @@ export default {
 		};
 	},
 	mounted() {
-		const productId = this.$router.params.productId;
-		const ticketId = this.$router.params.ticketId;
+		const productId = this.$route.params.productId;
+		const ticketId = this.$route.params.ticketId;
 		axios.get(`/product/${productId}/ticket/${ticketId}`).then((res) => {
 			this.ticketDetails = res.data;
 			this.chats = res.data.messages;
@@ -60,7 +60,7 @@ export default {
 	},
 	methods: {
 		sendText() {
-			axios.post(`/message/${this.$router.params.ticketId}`, {
+			axios.post(`/message/${this.$route.params.ticketId}`, {
 				content: this.newContent,
 			});
 			this.newContent = "";

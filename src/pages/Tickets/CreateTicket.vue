@@ -51,7 +51,7 @@ export default {
 					this.ticketTitle,
 					this.ticketDescription,
 					this.ticketDeadline,
-					this.$router.params.ticketType,
+					this.$route.params.ticketType,
 					this.productTitle
 				);
 				this.$toast.success("Ticket Submitted");

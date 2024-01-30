@@ -43,8 +43,9 @@ export default {
 		};
 	},
 	mounted() {
-		this.thisProductId = this.$router.params.id;
+		this.thisProductId = this.$route.params.id;
 		axios.get(`/product/${this.thisProductId}/view`).then((res) => {
+			console.log(res);
 			this.thisProductTitle = res.data.name;
 			this.thisProductDescription = res.data.description;
 			this.thisProductPicture = res.data.imageId;

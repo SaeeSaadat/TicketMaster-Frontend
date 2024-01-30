@@ -63,17 +63,17 @@ const routes = [
 				component: EditProduct,
 			},
 			{
-				path: "/product/:id/view",
+				path: "product/:id/view",
 				name: "Business Product",
 				component: UniqueProductPage,
 			},
 			{
-				path: "/submitTicket/:ticketType",
+				path: "submitTicket/:ticketType",
 				name: "Submit New Ticket",
 				component: CreateTicket,
 			},
 			{
-				path: "/product/:productId/ticket/:ticketId",
+				path: "product/:productId/ticket/:ticketId",
 				name: "ticket",
 				component: Ticket,
 			},
