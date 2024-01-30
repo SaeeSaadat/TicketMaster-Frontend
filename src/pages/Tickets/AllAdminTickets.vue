@@ -49,9 +49,7 @@
 				<button class="btn btn-primary" :disabled="page == 0" @click="goback">
 					Previous Page
 				</button>
-				<button class="btn btn-primary" :disabled="1" @click="goforward">
-					Next Page
-				</button>
+				<button class="btn btn-primary" @click="goforward">Next Page</button>
 			</div>
 		</div>
 	</div>

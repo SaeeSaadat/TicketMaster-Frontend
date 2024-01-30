@@ -5,19 +5,19 @@
 				<label for="ticketTypes" class="mr-3 mb-4"><h4>Ticket Type:</h4></label>
 				<select v-model="selectedTicketType" name="ticketTypes" class="mr-5">
 					<option value="">-</option>
-					<option value="bug">bug</option>
-					<option value="question">question</option>
-					<option value="information">information</option>
+					<option value="BUG">BUG</option>
+					<option value="QUESTION">QUESTION</option>
+					<option value="SUGGESTION">SUGGESTION</option>
 				</select>
 			</div>
 			<div>
 				<label for="status" class="mr-3 mb-4"><h4>Status:</h4></label>
 				<select v-model="selectedTicketStatus" name="status" class="mr-5">
 					<option value="">-</option>
-					<option value="open">open</option>
-					<option value="closed">closed</option>
-					<option value="pending">pending</option>
-					<option value="needs_reply">needs reply</option>
+					<option value="OPEN">OPEN</option>
+					<option value="CLOSED">CLOSED</option>
+					<option value="PENDING">PENDING</option>
+					<option value="WAITING_FOR_USER">WAITING_FOR_USER</option>
 				</select>
 			</div>
 			<div>
@@ -47,7 +47,7 @@
 			<div class="mt-5" v-else><h1>There Is No Ticket ...</h1></div>
 			<div v-show="tickets">
 				<button class="btn btn-primary" :disabled="page == 0" @click="goback">Previous Page</button>
-				<button class="btn btn-primary" :disabled="1" @click="goforward">Next Page</button>
+				<button class="btn btn-primary" @click="goforward">Next Page</button>
 			</div>
 		</div>
 	</div>
