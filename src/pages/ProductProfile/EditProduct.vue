@@ -67,7 +67,7 @@ export default {
 		},
 		updateProduct() {
 			axios
-				.put(`/product/${this.productId}`, {
+				.post(`/product/${this.productId}/update`, {
 					version: this.version,
 					description: this.newProductDescription,
 					imageId: !!this.imageUrl ? this.imageUrl : "",

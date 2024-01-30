@@ -86,7 +86,7 @@ export default {
 			const productId = this.$route.params.productId;
 			const ticketId = this.$route.params.ticketId;
 			axios
-				.put(`/product/${productId}/ticket/${ticketId}`, {
+				.post(`/product/${productId}/ticket/${ticketId}/update`, {
 					status: this.changedStatus,
 				})
 				.then(() => {

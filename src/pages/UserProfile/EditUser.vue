@@ -66,7 +66,7 @@ export default {
 	},
 	methods: {
 		updateUserProfile() {
-			axios.put("/profile", {
+			axios.post("/profile/update", {
 				version: 0,
 				profilePicture: this.imageUrl ? this.imageUrl : "",
 				oldPassword: this.oldPassword,
