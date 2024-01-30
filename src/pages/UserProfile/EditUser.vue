@@ -53,7 +53,7 @@ export default {
 	data() {
 		return {
 			version: 0,
-			imageUrl: "",
+			imageUrl: null,
 			oldPassword: null,
 			newPassword: null,
 			newRePassword: null,
@@ -66,13 +66,20 @@ export default {
 	},
 	methods: {
 		updateUserProfile() {
-			axios.post("/profile/update", {
-				version: 0,
-				profilePicture: this.imageUrl ? this.imageUrl : "",
-				oldPassword: this.oldPassword,
-				newPassword: this.newPassword,
-				newPasswordConfirmation: this.newRePassword,
-			});
+			axios
+				.post("/profile/update", {
+					version: this.version,
+					profilePicture: this.imageUrl ? this.imageUrl : "",
+					oldPassword: this.oldPassword,
+					newPassword: this.newPassword,
+					newPasswordConfirmation: this.newRePassword,
+				})
+				.then(() => {
+					this.$toast.succes("Done...");
+				})
+				.catch(() => {
+					this.$toast.error("Something went wrong");
+				});
 		},
 		triggerPicturePickerInput() {
 			this.$refs.fileInput.click();
@@ -86,6 +93,11 @@ export default {
 			});
 
 			fileReader.readAsDataURL(file);
+
+			axios.post("/s3/pre-sign", {
+				bucketName: "ticket",
+				objectName: "user-" + this.userId,
+			})
 		},
 	},
 	computed: {

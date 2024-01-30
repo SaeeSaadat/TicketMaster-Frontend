@@ -47,7 +47,7 @@ export default {
 		return {
 			productName: "",
 			productDescription: "",
-			imageUrl: "",
+			imageUrl: null,
 		};
 	},
 	methods: {
@@ -81,6 +81,11 @@ export default {
 			});
 
 			fileReader.readAsDataURL(file);
+
+			axios.post("/s3/pre-sign", {
+				bucketName: "ticket",
+				objectName: "product-" + this.productName,
+			})
 		},
 	},
 };

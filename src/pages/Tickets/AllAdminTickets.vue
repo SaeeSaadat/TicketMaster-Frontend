@@ -20,20 +20,6 @@
 					<option value="WAITING_FOR_USER">WAITING_FOR_USER</option>
 				</select>
 			</div>
-			<div>
-				<label for="productNames" class="mr-3 mb-4"
-					><h4>Product Name:</h4></label
-				>
-				<select v-model="selectedProductName" name="productNames">
-					<option :value="null">-</option>
-					<option
-						v-for="productName in allProductNamesWithSubmittedTickets"
-						:value="productName"
-					>
-						{{ productName }}
-					</option>
-				</select>
-			</div>
 			<div class="ml-1">
 				<p class="mr-4 h4">createdAfter:</p>
 				<DatePicker v-model="createdAfter" valueType="format" class="mr-5" />

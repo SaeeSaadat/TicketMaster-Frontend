@@ -36,11 +36,12 @@ import axios from "axios";
 export default {
 	data() {
 		return {
-			imageUrl: "",
+			imageUrl: null,
 			newProductDescription: "",
 			version: "",
 			productId: "",
 			productDescription: "",
+			productName: "",
 		};
 	},
 	mounted() {
@@ -48,6 +49,7 @@ export default {
 		this.productDescription = localStorage.getItem("currentProductDescription");
 		axios.get(`/product/${this.productId}`).then((res) => {
 			this.version = res.data.version;
+			this.productName = res.data.productName;
 			this.newProductDescription = res.data.description;
 		});
 	},
@@ -64,6 +66,11 @@ export default {
 			});
 
 			fileReader.readAsDataURL(file);
+
+			axios.post("/s3/pre-sign", {
+				bucketName: "ticket",
+				objectName: "product-" + this.productName,
+			});
 		},
 		updateProduct() {
 			axios
