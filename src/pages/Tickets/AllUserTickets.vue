@@ -46,8 +46,8 @@
 			<user-tickets v-if="tickets" :tickets="tickets" />
 			<div class="mt-5" v-else><h1>There Is No Ticket ...</h1></div>
 			<div v-show="tickets">
-				<button :disabled="page == 0" @click="goback">Previous Page</button>
-				<button :disabled="1" @click="goforward">Next Page</button>
+				<button class="btn btn-primary" :disabled="page == 0" @click="goback">Previous Page</button>
+				<button class="btn btn-primary" :disabled="1" @click="goforward">Next Page</button>
 			</div>
 		</div>
 	</div>
