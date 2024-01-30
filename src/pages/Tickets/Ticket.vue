@@ -6,6 +6,20 @@
 			<h4>DueDate: {{ ticketDetails.deadline }}</h4>
 			<h2>Status: {{ ticketDetails.status }}</h2>
 
+			<div v-if="role == 'ADMIN'">
+				<label for="status" class="mr-3 mb-4"><h4>Change Status:</h4></label>
+				<select v-model="changedStatus" name="changeStatus">
+					<option value="-">-</option>
+					<option value="OPEN">OPEN</option>
+					<option value="CLOSED">CLOSED</option>
+					<option value="PENDING">PENDING</option>
+					<option value="WAITING_FOR_USER">WAITING_FOR_USER</option>
+				</select>
+				<button @click="changeStatus" class="btn btn-primary ml-4">
+					Change
+				</button>
+			</div>
+
 			<div class="row text-center mx-auto">
 				<card class="mr-5 ml-4" style="width: 60%">
 					{{ ticketDetails.description }}
@@ -13,7 +27,14 @@
 				<div class="dflex flex-column" style="width: 30%">
 					<card style="height: 380px; overflow-y: auto">
 						<p class="mb-4">ChatBox</p>
-						<p v-for="message in chats" class="text-center text-primary">
+						<p
+							v-for="(message, index) in chats"
+							:class="[
+								index % 2 == 0
+									? 'text-left text-primary'
+									: 'text-right text-info',
+							]"
+						>
 							{{ message.content }}
 						</p>
 					</card>
@@ -48,6 +69,7 @@ export default {
 			newContent: "",
 			ticketDetails: "",
 			chats: "",
+			changedStatus: "",
 		};
 	},
 	mounted() {
@@ -64,6 +86,26 @@ export default {
 				content: this.newContent,
 			});
 			this.newContent = "";
+		},
+		changeStatus() {
+			const productId = this.$route.params.productId;
+			const ticketId = this.$route.params.ticketId;
+			axios
+				.put(`product`, {
+					status: this.changedStatus,
+				})
+				.then(() => {
+					this.$toast.succes("Changed ...");
+				})
+				.catch(() => {
+					this.$toast.error("Something went wrong!");
+				});
+		},
+	},
+	computed: {
+		role() {
+			const role = localStorage.getItem("role");
+			return role == "null" ? "" : "ADMIN";
 		},
 	},
 };
